@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home Interiors | ADK SunnyView LLC</title>
-  <meta name="description" content="Interior concepts for ADK SunnyView manufactured homes — warm, family-focused living spaces designed for long-term comfort." />
+  <meta name="description" content="Thoughtfully designed interiors for new double-wide manufactured homes at ADK SunnyView LLC." />
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -21,18 +21,18 @@
 
     body {
       font-family: 'Inter', system-ui, sans-serif;
-      color: var(--text-light);
       background:
-        radial-gradient(circle at top, rgba(245,197,66,0.18), transparent 45%),
+        radial-gradient(circle at top, rgba(245,197,66,0.18), transparent 50%),
         linear-gradient(180deg, #0b0f14 0%, #0e1624 100%);
-      line-height: 1.65;
+      color: var(--text-light);
+      line-height: 1.6;
     }
 
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(11,15,20,0.75);
+      background: rgba(11,15,20,0.8);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
@@ -48,6 +48,7 @@
 
     .logo {
       font-weight: 800;
+      letter-spacing: 0.5px;
     }
 
     .logo span { color: var(--sun-gold); }
@@ -62,78 +63,78 @@
     .nav-links a:hover { color: #fff; }
 
     main {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 5rem 2rem 6rem;
     }
 
     h1 {
       font-size: 3rem;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
     }
 
     h1 span { color: var(--sun-gold); }
 
-    h2 {
-      font-size: 2.1rem;
+    .intro {
+      max-width: 800px;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 4rem;
+    }
+
+    /* Animated sections */
+    .section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 5rem;
+      align-items: center;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .section:nth-child(odd) {
+      animation-delay: 0.2s;
+    }
+
+    .section:nth-child(even) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .image-panel {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.45);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .image-panel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1.2s ease;
+    }
+
+    .image-panel:hover img {
+      transform: scale(1.05);
+    }
+
+    .content-panel h2 {
+      font-size: 2rem;
       margin-bottom: 1rem;
     }
 
-    p {
+    .content-panel p {
       color: var(--text-muted);
-      max-width: 900px;
       margin-bottom: 1.25rem;
-    }
-
-    section {
-      margin-bottom: 5rem;
-    }
-
-    /* Animated Interior Panels */
-    .interior-panel {
-      background: var(--panel);
-      border-radius: 22px;
-      padding: 2.5rem;
-      border: 1px solid rgba(255,255,255,0.08);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .interior-visual {
-      width: 100%;
-      height: 360px;
-      border-radius: 18px;
-      background:
-        linear-gradient(120deg,
-          rgba(245,197,66,0.25),
-          rgba(255,255,255,0.05),
-          rgba(245,197,66,0.15)
-        );
-      background-size: 300% 300%;
-      animation: warmFlow 12s ease infinite;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-weight: 700;
-      letter-spacing: 1.2px;
-      font-size: 1.05rem;
-      margin-bottom: 1.5rem;
-    }
-
-    @keyframes warmFlow {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .label {
-      color: var(--sun-gold);
-      font-weight: 700;
-      letter-spacing: 1px;
-      margin-bottom: 0.5rem;
-      text-transform: uppercase;
-      font-size: 0.85rem;
     }
 
     footer {
@@ -143,8 +144,15 @@
       font-size: 0.85rem;
       opacity: 0.6;
     }
+
+    @media (max-width: 900px) {
+      .section {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
+
 <body>
 
 <header>
@@ -153,76 +161,72 @@
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="mission.html">Mission</a>
-      <a href="development.html">Current Development</a>
-      <a href="future-park.html">Future Expansion</a>
+      <a href="development.html">Development</a>
+      <a href="future-park.html">Future Park</a>
       <a href="community-center.html">Community Center</a>
-      <a href="interiors.html">Interiors</a>
     </div>
   </nav>
 </header>
 
 <main>
-
-  <h1>Home <span>Interiors</span></h1>
-  <p>
-    These interior concepts reflect how we would want our own parents to live —
-    warm kitchens, comfortable living rooms, and bedrooms designed for rest,
-    not trends. Quality that feels familiar, solid, and built to last.
+  <h1>Inside the <span>Homes</span></h1>
+  <p class="intro">
+    The new double-wide manufactured homes at ADK SunnyView are designed with the
+    same care you’d expect if the owners were your own parents—clean lines, warm
+    materials, and layouts that support real family living.
   </p>
 
-  <!-- KITCHEN & DINING -->
-  <section>
-    <div class="interior-panel">
-      <div class="label">Kitchen & Dining</div>
-      <div class="interior-visual">
-        OPEN KITCHEN · DINING · FAMILY GATHERING
-      </div>
+  <div class="section">
+    <div class="image-panel">
+      <img src="image/cabin2.jpg" alt="Manufactured Home Living Area">
+    </div>
+    <div class="content-panel">
+      <h2>Open, Livable Spaces</h2>
       <p>
-        Open-concept kitchens anchor each double-wide home, creating a natural
-        gathering space for meals, conversation, and everyday life. Durable
-        surfaces, clean lines, and warm lighting keep the space practical and inviting.
+        Living areas are designed to feel open and welcoming, with natural light,
+        practical flow, and room to gather. These are spaces meant for everyday life—
+        not temporary living.
+      </p>
+      <p>
+        Durable finishes and neutral palettes ensure longevity, comfort, and ease of
+        maintenance for residents and ownership alike.
       </p>
     </div>
-  </section>
+  </div>
 
-  <!-- LIVING ROOM -->
-  <section>
-    <div class="interior-panel">
-      <div class="label">Living Room</div>
-      <div class="interior-visual">
-        COMFORTABLE · QUIET · NATURAL LIGHT
-      </div>
+  <div class="section">
+    <div class="content-panel">
+      <h2>Kitchen & Dining</h2>
       <p>
-        Living rooms are designed for real use — watching a game, reading a book,
-        or hosting grandchildren. Wide layouts and thoughtful window placement
-        create a calm, grounded atmosphere.
+        Kitchens are laid out for real use—meals, conversations, and daily routines.
+        Storage, counter space, and appliance placement are all designed for
+        efficiency without sacrificing warmth.
+      </p>
+      <p>
+        These interiors reflect long-term thinking: easy to maintain, timeless in
+        appearance, and built to last.
       </p>
     </div>
-  </section>
+    <div class="image-panel">
+      <img src="image/cabin2.jpg" alt="Manufactured Home Kitchen and Dining">
+    </div>
+  </div>
 
-  <!-- BEDROOM -->
-  <section>
-    <div class="interior-panel">
-      <div class="label">Bedroom</div>
-      <div class="interior-visual">
-        REST · PRIVACY · SIMPLICITY
-      </div>
+  <div class="section">
+    <div class="image-panel">
+      <img src="image/cabin2.jpg" alt="Manufactured Home Bedroom">
+    </div>
+    <div class="content-panel">
+      <h2>Restful Bedrooms</h2>
       <p>
-        Bedrooms emphasize peace and privacy. Soft tones, functional storage,
-        and separation from living areas ensure quiet rest and long-term comfort.
+        Bedrooms are designed as quiet, private spaces—well-proportioned, calm, and
+        comfortable. The goal is rest, stability, and a sense of home.
+      </p>
+      <p>
+        These homes are meant to be lived in for years, not months.
       </p>
     </div>
-  </section>
-
-  <section>
-    <h2>Designed Like Family Lives Here</h2>
-    <p>
-      These homes are not built to flip — they are built to stay. Every interior
-      decision supports longevity, ease of maintenance, and a sense of dignity
-      for the people who live here.
-    </p>
-  </section>
-
+  </div>
 </main>
 
 <footer>
@@ -231,4 +235,3 @@
 
 </body>
 </html>
-
