@@ -1,1 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Community Center | ADK SunnyView LLC</title>
+  <meta name="description" content="ADK SunnyView Community Center — a warm, elevated gathering space serving residents of both the existing and future manufactured home park." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --sun-gold: #f5c542;
+      --ink-dark: #0b0f14;
+      --panel: rgba(255,255,255,0.08);
+      --text-light: #e5e7eb;
+      --text-muted: rgba(255,255,255,0.75);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--text-light);
+      background:
+        radial-gradient(circle at top, rgba(245,197,66,0.18), transparent 45%),
+        linear-gradient(180deg, #0b0f14 0%, #0e1624 100%);
+      line-height: 1.65;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(11,15,20,0.75);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    .logo span { color: var(--sun-gold); }
+
+    .nav-links a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .nav-links a:hover { color: #fff; }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 2rem 6rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1.25rem;
+    }
+
+    h1 span { color: var(--sun-gold); }
+
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: var(--text-muted);
+      max-width: 900px;
+      margin-bottom: 1.25rem;
+    }
+
+    section {
+      margin-bottom: 5rem;
+    }
+
+    .image-panel {
+      background: var(--panel);
+      border-radius: 22px;
+      padding: 2rem;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .image-panel img {
+      width: 100%;
+      border-radius: 16px;
+      display: block;
+      transition: transform 8s ease;
+    }
+
+    .image-panel:hover img {
+      transform: scale(1.04);
+    }
+
+    .caption {
+      margin-top: 1.25rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 3rem 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">ADK <span>SunnyView</span> LLC</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="mission.html">Mission</a>
+      <a href="development.html">Current Development</a>
+      <a href="future-park.html">Future Expansion</a>
+      <a href="community-center.html">Community Center</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <h1>Community <span>Center</span></h1>
+  <p>
+    The ADK SunnyView Community Center is designed as the heart of the property —
+    a welcoming space where families gather, neighbors connect, and community life
+    thrives across generations.
+  </p>
+
+  <!-- EXTERIOR -->
+  <section>
+    <h2>Exterior Concept — Elevated Gathering Hall</h2>
+    <p>
+      Positioned between the existing single-wide community and the future
+      elevated manufactured home park, the Community Center serves as a visual
+      and social anchor. Its 20×30 footprint and raised design complement the
+      natural terrain while offering year-round accessibility.
+    </p>
+
+    <div class="image-panel">
+      <img src="images/community-center-exterior.jpg" alt="Community Center Exterior Concept">
+      <div class="caption">
+        Conceptual exterior inspired by modern Adirondack architecture — elevated,
+        timber-framed, and designed to blend naturally with the surrounding landscape.
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERIOR -->
+  <section>
+    <h2>Interior Concept — Warm, Lodge-Style Space</h2>
+    <p>
+      Inside, the Community Center offers a warm, open environment with timber
+      finishes, vaulted ceilings, and flexible seating. The space supports
+      resident meetings, celebrations, educational programs, and quiet daily use.
+    </p>
+
+    <div class="image-panel">
+      <img src="images/community-center-interior.jpg" alt="Community Center Interior Concept">
+      <div class="caption">
+        Interior concept inspired by classic lodge design — open, welcoming,
+        and designed for both large gatherings and intimate community moments.
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Built for Community & Long-Term Value</h2>
+    <p>
+      More than an amenity, the Community Center reinforces ADK SunnyView’s
+      commitment to responsible development. By investing in shared spaces,
+      the property supports resident well-being, strengthens neighborhood ties,
+      and contributes to long-term property value growth.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 ADK SunnyView LLC. All rights reserved.
+</footer>
+
+</body>
+</html>
 
