@@ -2,153 +2,145 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home Interiors | ADK SunnyView LLC</title>
-  <meta name="description" content="Thoughtfully designed interiors for new double-wide manufactured homes at ADK SunnyView LLC." />
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
     :root {
-      --sun-gold: #f5c542;
-      --ink-dark: #0b0f14;
-      --panel: rgba(255,255,255,0.08);
-      --text-light: #e5e7eb;
-      --text-muted: rgba(255,255,255,0.75);
+      --sun-gold: #f4c430;
+      --deep-blue: #1c2b3a;
+      --soft-gray: #f5f7fa;
+      --warm-wood: #c7a26a;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+    }
 
     body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background:
-        radial-gradient(circle at top, rgba(245,197,66,0.18), transparent 50%),
-        linear-gradient(180deg, #0b0f14 0%, #0e1624 100%);
-      color: var(--text-light);
-      line-height: 1.6;
+      background: linear-gradient(to bottom, #ffffff, var(--soft-gray));
+      color: #1f2933;
+      line-height: 1.7;
     }
 
     header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(11,15,20,0.8);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(
+        rgba(28,43,58,0.85),
+        rgba(28,43,58,0.85)
+      ),
+      radial-gradient(circle at top, var(--sun-gold), transparent 60%);
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
     }
 
-    nav {
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.15rem;
+      opacity: 0.95;
+    }
+
+    section {
       max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      margin: auto;
+      padding: 4rem 2rem;
     }
 
-    .logo {
-      font-weight: 800;
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--deep-blue);
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      max-width: 900px;
+      margin-bottom: 2.5rem;
+      color: #4b5563;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 2rem;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .card:nth-child(2) {
+      animation-delay: 1.5s;
+    }
+
+    .card:nth-child(3) {
+      animation-delay: 3s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .card h3 {
+      margin-bottom: 1rem;
+      color: var(--deep-blue);
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #374151;
+    }
+
+    .visual {
+      height: 220px;
+      border-radius: 10px;
+      margin-bottom: 1.2rem;
+      background: linear-gradient(
+        135deg,
+        rgba(244,196,48,0.35),
+        rgba(199,162,106,0.35)
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      color: #1c2b3a;
       letter-spacing: 0.5px;
     }
 
-    .logo span { color: var(--sun-gold); }
-
-    .nav-links a {
-      margin-left: 1.5rem;
-      text-decoration: none;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
-
-    .nav-links a:hover { color: #fff; }
-
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 5rem 2rem 6rem;
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 1.5rem;
-    }
-
-    h1 span { color: var(--sun-gold); }
-
-    .intro {
-      max-width: 800px;
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      margin-bottom: 4rem;
-    }
-
-    /* Animated sections */
-    .section {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      margin-bottom: 5rem;
-      align-items: center;
-      opacity: 0;
-      transform: translateY(40px);
-      animation: fadeUp 1s ease forwards;
-    }
-
-    .section:nth-child(odd) {
-      animation-delay: 0.2s;
-    }
-
-    .section:nth-child(even) {
-      animation-delay: 0.4s;
-    }
-
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .image-panel {
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.45);
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .image-panel img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 1.2s ease;
-    }
-
-    .image-panel:hover img {
-      transform: scale(1.05);
-    }
-
-    .content-panel h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .content-panel p {
-      color: var(--text-muted);
-      margin-bottom: 1.25rem;
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, #d1d5db, transparent);
+      margin: 4rem 0;
     }
 
     footer {
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding: 3rem 2rem;
+      background: var(--deep-blue);
+      color: white;
+      padding: 2.5rem 1.5rem;
       text-align: center;
-      font-size: 0.85rem;
-      opacity: 0.6;
+      font-size: 0.9rem;
     }
 
-    @media (max-width: 900px) {
-      .section {
-        grid-template-columns: 1fr;
-      }
+    footer span {
+      color: var(--sun-gold);
+      font-weight: 600;
     }
   </style>
 </head>
@@ -156,82 +148,131 @@
 <body>
 
 <header>
-  <nav>
-    <div class="logo">ADK <span>SunnyView</span> LLC</div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="mission.html">Mission</a>
-      <a href="development.html">Development</a>
-      <a href="future-park.html">Future Park</a>
-      <a href="community-center.html">Community Center</a>
-    </div>
-  </nav>
+  <h1>Interior Living at ADK SunnyView</h1>
+  <p>
+    Thoughtfully maintained homes today — and beautifully designed manufactured
+    homes tomorrow — created with the same care we would give our own family.
+  </p>
 </header>
 
-<main>
-  <h1>Inside the <span>Homes</span></h1>
-  <p class="intro">
-    The new double-wide manufactured homes at ADK SunnyView are designed with the
-    same care you’d expect if the owners were your own parents—clean lines, warm
-    materials, and layouts that support real family living.
+<section>
+  <h2 class="section-title">Option 1 — Existing Single-Wide Homes</h2>
+  <p class="section-subtitle">
+    The current homes at SunnyView represent stability, affordability, and pride
+    of ownership. Interiors are clean, functional, and dignified — serving long-term
+    residents who value consistency and community.
   </p>
 
-  <div class="section">
-    <div class="image-panel">
-      <img src="image/cabin2.jpg" alt="Manufactured Home Living Area">
-    </div>
-    <div class="content-panel">
-      <h2>Open, Livable Spaces</h2>
+  <div class="card-grid">
+    <div class="card">
+      <div class="visual">Living Area Visualization</div>
+      <h3>Comfort & Familiarity</h3>
       <p>
-        Living areas are designed to feel open and welcoming, with natural light,
-        practical flow, and room to gather. These are spaces meant for everyday life—
-        not temporary living.
+        Warm layouts, efficient kitchens, and comfortable living spaces that support
+        everyday life without excess — proven designs that residents trust.
       </p>
+    </div>
+
+    <div class="card">
+      <div class="visual">Kitchen Visualization</div>
+      <h3>Practical Design</h3>
       <p>
-        Durable finishes and neutral palettes ensure longevity, comfort, and ease of
-        maintenance for residents and ownership alike.
+        Straightforward interiors focused on function, cleanliness, and ease of
+        maintenance — ideal for long-term occupancy and predictable costs.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="visual">Bedroom Visualization</div>
+      <h3>Privacy & Rest</h3>
+      <p>
+        Quiet, well-defined personal spaces designed to feel secure and restful,
+        reinforcing a sense of home and permanence.
       </p>
     </div>
   </div>
 
-  <div class="section">
-    <div class="content-panel">
-      <h2>Kitchen & Dining</h2>
+  <div class="divider"></div>
+
+  <h2 class="section-title">Option 2 — New Double-Wide Manufactured Homes</h2>
+  <p class="section-subtitle">
+    The future homes planned for the elevated rear of the property represent a
+    new standard: larger footprints, open interiors, modern finishes, and long-term
+    value for residents and the community.
+  </p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="visual">Open-Concept Interior</div>
+      <h3>Spacious Living</h3>
       <p>
-        Kitchens are laid out for real use—meals, conversations, and daily routines.
-        Storage, counter space, and appliance placement are all designed for
-        efficiency without sacrificing warmth.
-      </p>
-      <p>
-        These interiors reflect long-term thinking: easy to maintain, timeless in
-        appearance, and built to last.
+        Expansive open-concept layouts with natural light, higher ceilings, and
+        seamless flow between kitchen, dining, and living areas.
       </p>
     </div>
-    <div class="image-panel">
-      <img src="image/cabin2.jpg" alt="Manufactured Home Kitchen and Dining">
+
+    <div class="card">
+      <div class="visual">Modern Kitchen</div>
+      <h3>Modern Materials</h3>
+      <p>
+        Durable countertops, updated cabinetry, energy-efficient appliances,
+        and finishes selected for longevity and ease of care.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="visual">Primary Suite</div>
+      <h3>Comfort & Dignity</h3>
+      <p>
+        Private bedroom suites with generous storage and calm design — homes
+        people are proud to live in and stay in.
+      </p>
     </div>
   </div>
 
-  <div class="section">
-    <div class="image-panel">
-      <img src="image/cabin2.jpg" alt="Manufactured Home Bedroom">
-    </div>
-    <div class="content-panel">
-      <h2>Restful Bedrooms</h2>
+  <div class="divider"></div>
+
+  <h2 class="section-title">Option 3 — Interior Design as Community Investment</h2>
+  <p class="section-subtitle">
+    Interior quality is not cosmetic — it directly impacts resident retention,
+    property value, and long-term financial stability. These designs are intentional,
+    conservative, and future-proof.
+  </p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="visual">Resident Stability</div>
+      <h3>Lower Turnover</h3>
       <p>
-        Bedrooms are designed as quiet, private spaces—well-proportioned, calm, and
-        comfortable. The goal is rest, stability, and a sense of home.
+        Well-designed interiors encourage long-term residency, reducing vacancy,
+        turnover costs, and operational volatility.
       </p>
+    </div>
+
+    <div class="card">
+      <div class="visual">Asset Longevity</div>
+      <h3>Durable Assets</h3>
       <p>
-        These homes are meant to be lived in for years, not months.
+        Materials and layouts selected to age well, control maintenance costs,
+        and protect the value of the park for decades.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="visual">Community Pride</div>
+      <h3>Pride of Place</h3>
+      <p>
+        Interiors that feel respectful and intentional reinforce a positive
+        identity for residents and the surrounding community.
       </p>
     </div>
   </div>
-</main>
+</section>
 
 <footer>
-  © 2026 ADK SunnyView LLC. All rights reserved.
+  © ADK SunnyView LLC — Built with care, foresight, and <span>long-term American values</span>.
 </footer>
 
 </body>
 </html>
+
