@@ -4,9 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Current Development | ADK SunnyView LLC</title>
-  <meta name="description" content="ADK SunnyView LLC current development featuring existing single-wide homes along the roadway and a planned elevated double-wide manufactured home park designed to significantly increase property value." />
+  <meta name="description" content="Existing single-wide mobile home park and the strategic elevation plan for the future manufactured home expansion at ADK SunnyView LLC." />
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
@@ -15,6 +14,7 @@
       --sun-soft: #ffe8a3;
       --ink-dark: #0b0f14;
       --panel: rgba(255,255,255,0.08);
+      --panel-strong: rgba(255,255,255,0.12);
       --text-light: #e5e7eb;
       --text-muted: rgba(255,255,255,0.75);
     }
@@ -25,9 +25,9 @@
       font-family: 'Inter', system-ui, sans-serif;
       color: var(--text-light);
       background:
-        radial-gradient(circle at top, rgba(245,197,66,0.25), transparent 45%),
-        linear-gradient(180deg, #0b0f14 0%, #0e1624 100%);
-      line-height: 1.6;
+        radial-gradient(circle at 20% 0%, rgba(245,197,66,0.25), transparent 40%),
+        linear-gradient(180deg, #070a0f 0%, #0e1624 100%);
+      line-height: 1.65;
     }
 
     header {
@@ -44,8 +44,8 @@
       margin: 0 auto;
       padding: 1rem 2rem;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
     }
 
     .logo {
@@ -67,73 +67,16 @@
     main {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 5rem 2rem 6rem;
+      padding: 6rem 2rem 7rem;
     }
 
     h1 {
-      font-size: 3rem;
-      line-height: 1.15;
+      font-size: 3.1rem;
+      line-height: 1.1;
       margin-bottom: 1.5rem;
     }
 
     h1 span { color: var(--sun-gold); }
-
-    .intro {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      max-width: 900px;
-      margin-bottom: 3.5rem;
-    }
-
-    .value-callout {
-      background: linear-gradient(135deg, rgba(245,197,66,0.15), rgba(245,197,66,0.05));
-      border: 1px solid rgba(245,197,66,0.35);
-      border-radius: 22px;
-      padding: 2.5rem;
-      margin-bottom: 4rem;
-    }
-
-    .value-callout h2 {
-      font-size: 2.4rem;
-      margin-bottom: 1rem;
-    }
-
-    .value-callout p {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-    }
-
-    .scene-wrapper {
-      background: var(--panel);
-      border-radius: 22px;
-      padding: 2rem;
-      border: 1px solid rgba(255,255,255,0.08);
-      margin-bottom: 4rem;
-    }
-
-    #scene-container {
-      width: 100%;
-      height: 560px;
-      border-radius: 16px;
-      overflow: hidden;
-    }
-
-    .legend {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-
-    .legend-item {
-      background: rgba(0,0,0,0.35);
-      padding: 1.25rem;
-      border-radius: 14px;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    section { margin-bottom: 4rem; }
 
     h2 {
       font-size: 2.2rem;
@@ -142,8 +85,53 @@
 
     p {
       color: var(--text-muted);
-      max-width: 900px;
+      max-width: 920px;
       margin-bottom: 1.25rem;
+      font-size: 1.02rem;
+    }
+
+    section { margin-bottom: 5rem; }
+
+    .panel {
+      background: var(--panel);
+      border-radius: 22px;
+      padding: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .panel-strong {
+      background: var(--panel-strong);
+      border-radius: 22px;
+      padding: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+    }
+
+    /* Elevation visual */
+    .elevation-graphic {
+      width: 100%;
+      height: 460px;
+      border-radius: 22px;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.8)),
+        linear-gradient(
+          180deg,
+          #3c5f45 0%,
+          #2e4a35 35%,
+          #1f2c22 55%,
+          #14181f 100%
+        );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: 700;
+      letter-spacing: 1.4px;
     }
 
     footer {
@@ -165,7 +153,6 @@
       <a href="mission.html">Mission</a>
       <a href="development.html">Current Development</a>
       <a href="future-park.html">Future Expansion</a>
-      <a href="interiors.html">Interiors</a>
       <a href="community-center.html">Community Center</a>
     </div>
   </nav>
@@ -173,52 +160,73 @@
 
 <main>
 
-  <h1>Current <span>Development</span></h1>
-
-  <p class="intro">
-    ADK SunnyView LLC operates a stabilized manufactured home park while executing
-    a long-term expansion strategy designed to significantly increase property
-    value. Existing single-wide homes line the roadway at a lower elevation, while
-    a new double-wide manufactured home community is planned on elevated land in
-    the rear of the property.
-  </p>
-
-  <div class="value-callout">
-    <h2>Doubling Property Value Through Smart Expansion</h2>
-    <p>
-      The business plan centers on transforming underutilized rear acreage into a
-      premium manufactured housing community. By elevating the new park approximately
-      20 feet above the existing homes and introducing larger double-wide residences,
-      SunnyView creates a clear hierarchy of development, improved views, and
-      long-term asset appreciation.
-    </p>
-  </div>
-
-  <div class="scene-wrapper">
-    <h2>3D Property Layout Overview</h2>
-    <p>
-      Conceptual visualization illustrating the relationship between the existing
-      single-wide homes along the main road and the proposed elevated double-wide
-      home park positioned on higher ground toward the rear of the property.
-    </p>
-
-    <div id="scene-container"></div>
-
-    <div class="legend">
-      <div class="legend-item">Lower elevation front section with existing single-wide homes</div>
-      <div class="legend-item">Rear 10 acres elevated approximately 20 feet for new double-wide homes</div>
-      <div class="legend-item">Clear visual separation between current operations and future expansion</div>
-    </div>
-  </div>
-
+  <!-- HERO -->
   <section>
-    <h2>Development Logic</h2>
+    <h1>Existing Park & <span>Strategic Elevation Plan</span></h1>
     <p>
-      Locating the new manufactured homes on higher ground preserves privacy for
-      existing residents while establishing a premium residential zone. This
-      elevation strategy improves drainage, views, and market perception—key
-      drivers in the property's projected value increase.
+      ADK SunnyView LLC currently operates a stabilized single-wide mobile home
+      park positioned along the main road frontage of the property.
     </p>
+    <p>
+      This existing development forms the foundation of a broader strategy:
+      preserving current value while unlocking substantial upside through
+      intentional elevation and expansion.
+    </p>
+  </section>
+
+  <!-- EXISTING PARK -->
+  <section>
+    <h2>Front Park — Established Single-Wide Homes</h2>
+    <div class="grid">
+      <div class="panel">
+        <p>
+          The existing park consists of single-wide homes located on the lower
+          portion of the property, closest to the main road and original utility
+          corridors.
+        </p>
+        <p>
+          Long-term residents benefit from established access, continuity, and
+          stability while remaining insulated from future construction activity.
+        </p>
+      </div>
+      <div class="panel-strong">
+        <p>
+          This section of the property remains intentionally unchanged — serving
+          as the stable income base while new value is built behind it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ELEVATION VISUAL -->
+  <section>
+    <h2>Rear Elevation — Future Manufactured Home Park</h2>
+    <p>
+      The rear acreage rises approximately 20 feet above the existing park,
+      creating a natural separation that supports higher-quality development.
+    </p>
+
+    <div class="elevation-graphic">
+      FRONT: SINGLE-WIDE HOMES (LOWER ELEVATION)<br><br>
+      ▲ 20 FT ELEVATION GAIN ▲<br><br>
+      REAR: DOUBLE-WIDE MANUFACTURED HOMES
+    </div>
+  </section>
+
+  <!-- VALUE DOUBLING -->
+  <section>
+    <h2>Value Repositioning Strategy</h2>
+    <div class="panel">
+      <p>
+        By introducing a new double-wide manufactured home park on elevated land,
+        ADK SunnyView LLC is repositioning the property as a mixed-generation,
+        multi-tier residential community.
+      </p>
+      <p>
+        This strategy is designed to more than double the total asset value of
+        the property while enhancing livability, resilience, and long-term demand.
+      </p>
+    </div>
   </section>
 
 </main>
@@ -227,96 +235,5 @@
   © 2026 ADK SunnyView LLC. All rights reserved.
 </footer>
 
-<script type="module">
-  import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
-
-  const container = document.getElementById('scene-container');
-
-  const scene = new THREE.Scene();
-  scene.background = new THREE.Color(0x0b0f14);
-
-  const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
-  camera.position.set(90, 55, 90);
-  camera.lookAt(0, 0, 0);
-
-  const renderer = new THREE.WebGLRenderer({ antialias: true });
-  renderer.setSize(container.clientWidth, container.clientHeight);
-  renderer.setPixelRatio(window.devicePixelRatio);
-  container.appendChild(renderer.domElement);
-
-  // Lighting
-  const sunLight = new THREE.DirectionalLight(0xf5c542, 1.3);
-  sunLight.position.set(60, 80, 40);
-  scene.add(sunLight);
-
-  scene.add(new THREE.AmbientLight(0xffffff, 0.35));
-
-  // Ground levels
-  const lowerGround = new THREE.Mesh(
-    new THREE.PlaneGeometry(300, 180),
-    new THREE.MeshStandardMaterial({ color: 0x1f2e23, roughness: 0.9 })
-  );
-  lowerGround.rotation.x = -Math.PI / 2;
-  scene.add(lowerGround);
-
-  const upperGround = new THREE.Mesh(
-    new THREE.PlaneGeometry(300, 140),
-    new THREE.MeshStandardMaterial({ color: 0x263b2a, roughness: 0.85 })
-  );
-  upperGround.rotation.x = -Math.PI / 2;
-  upperGround.position.y = 20;
-  upperGround.position.z = -120;
-  scene.add(upperGround);
-
-  // Home models
-  function singleWide() {
-    const g = new THREE.Group();
-    const body = new THREE.Mesh(new THREE.BoxGeometry(12, 4, 48), new THREE.MeshStandardMaterial({ color: 0xdadada }));
-    body.position.y = 2;
-    g.add(body);
-    return g;
-  }
-
-  function doubleWide() {
-    const g = new THREE.Group();
-    const body = new THREE.Mesh(new THREE.BoxGeometry(24, 5, 56), new THREE.MeshStandardMaterial({ color: 0xe6e6e6 }));
-    body.position.y = 2.5;
-    g.add(body);
-    return g;
-  }
-
-  // Existing single-wides (front)
-  for (let i = -3; i <= 3; i++) {
-    const home = singleWide();
-    home.position.set(i * 22, 0, 60);
-    scene.add(home);
-  }
-
-  // New double-wides (elevated rear)
-  for (let i = -2; i <= 2; i++) {
-    const home = doubleWide();
-    home.position.set(i * 30, 20, -120);
-    scene.add(home);
-  }
-
-  let angle = 0;
-  function animate() {
-    requestAnimationFrame(animate);
-    angle += 0.0012;
-    camera.position.x = 90 * Math.sin(angle);
-    camera.position.z = 90 * Math.cos(angle);
-    camera.lookAt(0, 15, -40);
-    renderer.render(scene, camera);
-  }
-  animate();
-
-  window.addEventListener('resize', () => {
-    camera.aspect = container.clientWidth / container.clientHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(container.clientWidth, container.clientHeight);
-  });
-</script>
-
 </body>
 </html>
-
