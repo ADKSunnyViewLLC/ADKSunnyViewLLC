@@ -1,187 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Assessor Site Map – 3 Gator Way, Peru NY</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f8fafc;
-      margin: 0;
-      padding: 2rem;
-      color: #111827;
-    }
+<meta charset="UTF-8" />
+<title>Assessor Site Map – ADK Sunny View LLC</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    h1 {
-      text-align: center;
-      margin-bottom: 0.5rem;
-    }
+<style>
+  body {
+    margin: 0;
+    font-family: Inter, system-ui, sans-serif;
+    background: #f3f4f6;
+    color: #111827;
+  }
 
-    .subtitle {
-      text-align: center;
-      color: #4b5563;
-      margin-bottom: 2rem;
-    }
+  header {
+    padding: 1.5rem;
+    text-align: center;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+  }
 
-    svg {
-      display: block;
-      margin: 0 auto;
-      background: #ffffff;
-      border: 2px solid #9ca3af;
-      border-radius: 12px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-    }
+  h1 {
+    margin: 0;
+    font-size: 1.9rem;
+  }
 
-    /* Property boundary */
-    .boundary {
-      fill: #ecfeff;
-      stroke: #0f766e;
-      stroke-width: 4;
-    }
+  p {
+    margin-top: 0.4rem;
+    color: #6b7280;
+  }
 
-    /* Existing homes */
-    .existing-home {
-      fill: #d1d5db;
-      stroke: #374151;
-      stroke-width: 1.5;
-    }
+  .map-container {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+  }
 
-    /* Proposed lots */
-    .lot {
-      fill: #dcfce7;
-      stroke: #166534;
-      stroke-width: 2;
-    }
+  svg {
+    background: #e6f4ea;
+    border: 3px solid #14532d;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+  }
 
-    .home {
-      fill: #a7f3d0;
-      stroke: #065f46;
-      stroke-width: 1.5;
-    }
+  .label {
+    font-size: 12px;
+    fill: #1f2937;
+  }
 
-    .lot-label {
-      font-size: 12px;
-      font-weight: bold;
-      fill: #065f46;
-      text-anchor: middle;
-    }
-
-    .acreage-label {
-      font-size: 11px;
-      fill: #065f46;
-      text-anchor: middle;
-    }
-
-    .legend {
-      max-width: 900px;
-      margin: 1.5rem auto 0;
-      background: #ffffff;
-      border-radius: 10px;
-      padding: 1rem 1.5rem;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-      font-size: 14px;
-    }
-  </style>
+  .small {
+    font-size: 11px;
+    fill: #374151;
+  }
+</style>
 </head>
 
 <body>
 
-<h1>Assessor Conceptual Site Map</h1>
-<p class="subtitle">
-  3 Gator Way, Peru NY • Approx. 24 Acres • Manufactured Housing Development
-</p>
+<header>
+  <h1>Conceptual Assessor Site Map (Scaled)</h1>
+  <p>3 Gator Way – Peru, NY | Sun Valley Mobile Home Park</p>
+</header>
 
-<svg width="900" height="600" viewBox="0 0 900 600">
+<div class="map-container">
 
-  <!-- PROPERTY BOUNDARY (24-acre conceptual square) -->
-  <rect x="50" y="50" width="800" height="500" class="boundary" />
+<svg width="1000" height="700" viewBox="0 0 1000 700">
 
-  <!-- MAIN ROAD -->
-  <rect x="50" y="50" width="800" height="60" fill="#e5e7eb" />
-  <text x="450" y="90" font-size="14" fill="#374151" text-anchor="middle">
-    Main Road / Existing Mobile Homes
+  <!-- DEFINITIONS -->
+  <defs>
+    <linearGradient id="grassGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#dcfce7"/>
+      <stop offset="100%" stop-color="#bbf7d0"/>
+    </linearGradient>
+
+    <radialGradient id="waterGrad">
+      <stop offset="0%" stop-color="#93c5fd"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </radialGradient>
+
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="4"
+        flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+
+    <linearGradient id="roadGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#9ca3af"/>
+      <stop offset="100%" stop-color="#6b7280"/>
+    </linearGradient>
+  </defs>
+
+  <!-- PROPERTY BOUNDARY (24 ACRES TOTAL) -->
+  <rect x="50" y="50" width="900" height="600"
+        fill="url(#grassGrad)"
+        stroke="#14532d"
+        stroke-width="4"/>
+
+  <text x="60" y="42" class="label">Total Property: ~24 Acres</text>
+
+  <!-- EXISTING ROAD -->
+  <path d="M120 500 Q300 460 480 500"
+        stroke="url(#roadGrad)"
+        stroke-width="20"
+        fill="none"
+        filter="url(#shadow)"/>
+
+  <text x="260" y="525" class="label">Existing Road – Gator Way</text>
+
+  <!-- PROPOSED INTERNAL ROAD (OVAL LOOP) -->
+  <ellipse cx="650" cy="420" rx="220" ry="120"
+           fill="none"
+           stroke="#9ca3af"
+           stroke-width="5"
+           stroke-dasharray="10 8"/>
+
+  <text x="610" y="560" class="label">Proposed Internal Road Loop</text>
+
+  <!-- NEW MANUFACTURED HOME LOTS -->
+  <g fill="#a7f3d0" stroke="#065f46" stroke-width="1.5" filter="url(#shadow)">
+
+    <!-- Each rectangle ≈ 0.75 acres (scaled) -->
+    <!-- Group 1 -->
+    <rect x="560" y="320" width="45" height="30"/>
+    <rect x="610" y="320" width="45" height="30"/>
+    <rect x="560" y="360" width="45" height="30"/>
+    <rect x="610" y="360" width="45" height="30"/>
+
+    <!-- Group 2 -->
+    <rect x="700" y="320" width="45" height="30"/>
+    <rect x="750" y="320" width="45" height="30"/>
+    <rect x="700" y="360" width="45" height="30"/>
+    <rect x="750" y="360" width="45" height="30"/>
+
+    <!-- Group 3 -->
+    <rect x="560" y="440" width="45" height="30"/>
+    <rect x="610" y="440" width="45" height="30"/>
+    <rect x="560" y="480" width="45" height="30"/>
+    <rect x="610" y="480" width="45" height="30"/>
+
+    <!-- Group 4 -->
+    <rect x="700" y="440" width="45" height="30"/>
+    <rect x="750" y="440" width="45" height="30"/>
+    <rect x="700" y="480" width="45" height="30"/>
+    <rect x="750" y="480" width="45" height="30"/>
+  </g>
+
+  <!-- LOT LABELS -->
+  <text x="560" y="310" class="small">Lots 1–4 (0.75 ac ea)</text>
+  <text x="700" y="310" class="small">Lots 5–8 (0.75 ac ea)</text>
+  <text x="560" y="430" class="small">Lots 9–12 (0.75 ac ea)</text>
+  <text x="700" y="430" class="small">Lots 13–16 (0.75 ac ea)</text>
+
+  <text x="600" y="515" class="label">
+    New Development Area: ~12 Acres Total
   </text>
 
-  <!-- EXISTING HOMES (FRONTAGE) -->
-  <g>
-    <rect x="120" y="65" width="60" height="30" class="existing-home" />
-    <rect x="220" y="65" width="60" height="30" class="existing-home" />
-    <rect x="320" y="65" width="60" height="30" class="existing-home" />
-    <rect x="420" y="65" width="60" height="30" class="existing-home" />
-    <rect x="520" y="65" width="60" height="30" class="existing-home" />
-    <rect x="620" y="65" width="60" height="30" class="existing-home" />
+  <!-- POND -->
+  <ellipse cx="650" cy="220" rx="60" ry="36"
+           fill="url(#waterGrad)"
+           filter="url(#shadow)"/>
+
+  <!-- SAND BUFFER -->
+  <ellipse cx="650" cy="220" rx="80" ry="52"
+           fill="none"
+           stroke="#b45309"
+           stroke-width="6"
+           stroke-dasharray="4 3"/>
+
+  <text x="605" y="220" class="label">Pond + Sand Buffer</text>
+
+  <!-- COMMUNITY CENTER (≈ 1.5 AC FOOTPRINT) -->
+  <rect x="585" y="140" width="130" height="70"
+        fill="#7c5c3b"
+        stroke="#3f2a14"
+        stroke-width="2"
+        filter="url(#shadow)"/>
+
+  <text x="555" y="132" class="label">
+    Community Center (~1.5 ac incl. setbacks)
+  </text>
+
+  <!-- WALK PATH -->
+  <line x1="650" y1="300" x2="650" y2="210"
+        stroke="#d1d5db"
+        stroke-width="4"
+        stroke-dasharray="6 6"/>
+
+  <!-- LEGEND -->
+  <g transform="translate(720, 80)" filter="url(#shadow)">
+    <rect x="0" y="0" width="240" height="290"
+          fill="#ffffff"
+          stroke="#374151"
+          stroke-width="2"
+          rx="12"/>
+
+    <text x="120" y="26" text-anchor="middle"
+          class="label" style="font-weight:600">Legend</text>
+
+    <text x="16" y="46" class="small">
+      Scale: 1 ac ≈ 30×30 units
+    </text>
+
+    <rect x="16" y="62" width="24" height="12"
+          fill="none" stroke="#14532d" stroke-width="3"/>
+    <text x="52" y="72" class="label">Property Boundary</text>
+
+    <rect x="16" y="86" width="24" height="12"
+          fill="#6b7280"/>
+    <text x="52" y="96" class="label">Existing Road</text>
+
+    <line x1="16" y1="114" x2="40" y2="114"
+          stroke="#9ca3af"
+          stroke-width="4"
+          stroke-dasharray="6 6"/>
+    <text x="52" y="118" class="label">Proposed Road</text>
+
+    <rect x="16" y="136" width="24" height="12"
+          fill="#a7f3d0"/>
+    <text x="52" y="146" class="label">0.75 ac Home Lot</text>
+
+    <rect x="16" y="160" width="24" height="12"
+          fill="#7c5c3b"/>
+    <text x="52" y="170" class="label">Community Center</text>
+
+    <ellipse cx="28" cy="194" rx="12" ry="6"
+             fill="#60a5fa"/>
+    <text x="52" y="198" class="label">Pond</text>
+
+    <ellipse cx="28" cy="220" rx="14" ry="8"
+             fill="none" stroke="#b45309" stroke-width="3"/>
+    <text x="52" y="224" class="label">Sand Buffer</text>
   </g>
 
-  <!-- PROPOSED MANUFACTURED HOME PARK (REAR / HILL) -->
-  <!-- 16 LOTS – 4 GROUPS OF 4 -->
-
-  <!-- ROW 1 -->
-  <g transform="translate(180,220)">
-    <rect width="120" height="90" class="lot" />
-    <rect x="35" y="25" width="50" height="30" class="home" />
-    <text x="60" y="18" class="lot-label">LOT 1</text>
-    <text x="60" y="82" class="acreage-label">0.75 ac</text>
+  <!-- NORTH ARROW -->
+  <g transform="translate(120,120)" filter="url(#shadow)">
+    <polygon points="20,0 36,42 20,34 4,42"
+             fill="#111827"/>
+    <text x="20" y="56" text-anchor="middle"
+          class="label" style="font-weight:600">N</text>
   </g>
 
-  <g transform="translate(340,220)">
-    <rect width="120" height="90" class="lot" />
-    <rect x="35" y="25" width="50" height="30" class="home" />
-    <text x="60" y="18" class="lot-label">LOT 2</text>
-    <text x="60" y="82" class="acreage-label">0.75 ac</text>
-  </g>
-
-  <g transform="translate(500,220)">
-    <rect width="120" height="90" class="lot" />
-    <rect x="35" y="25" width="50" height="30" class="home" />
-    <text x="60" y="18" class="lot-label">LOT 3</text>
-    <text x="60" y="82" class="acreage-label">0.75 ac</text>
-  </g>
-
-  <g transform="translate(660,220)">
-    <rect width="120" height="90" class="lot" />
-    <rect x="35" y="25" width="50" height="30" class="home" />
-    <text x="60" y="18" class="lot-label">LOT 4</text>
-    <text x="60" y="82" class="acreage-label">0.75 ac</text>
-  </g>
-
-  <!-- ROW 2 -->
-  <g transform="translate(180,340)">
-    <rect width="120" height="90" class="lot" />
-    <rect x="35" y="25" width="50" height="30" class="home" />
-    <text x="60" y="18" class="lot-label">LOT 5</text>
-    <text x="60" y="82" class="acreage-label">0.75 ac</text>
-  </g>
-
-  <g transform="translate(340,340)">
-    <rect width="120" height="90" class="lot" />
-    <rect x="35" y="25" width="50" height="30" class="home" />
-    <text x="60" y="18" class="lot-label">LOT 6</text>
-    <text x="60" y="82" class="acreage-label">0.75 ac</text>
-  </g>
-
-  <g transform="translate(500,340)">
-    <rect width="120" height="90" class="lot" />
-    <rect x="35" y="25" width="50" height="30" class="home" />
-    <text x="60" y="18" class="lot-label">LOT 7</text>
-    <text x="60" y="82" class="acreage-label">0.75 ac</text>
-  </g>
-
-  <g transform="translate(660,340)">
-    <rect width="120" height="90" class="lot" />
-    <rect x="35" y="25" width="50" height="30" class="home" />
-    <text x="60" y="18" class="lot-label">LOT 8</text>
-    <text x="60" y="82" class="acreage-label">0.75 ac</text>
-  </g>
+  <!-- DISCLAIMER -->
+  <text x="500" y="685"
+        text-anchor="middle"
+        class="small"
+        fill="#6b7280">
+    Conceptual, Scaled for Planning & Assessment – Not a Survey
+  </text>
 
 </svg>
 
-<div class="legend">
-  <strong>Legend:</strong><br />
-  ▢ Property Boundary: Approx. 24 acres (conceptual)<br />
-  ▢ Gray Homes: Existing frontage homes along main road<br />
-  ▢ Green Lots: Proposed manufactured home parcels<br />
-  ▢ Each proposed lot: <strong>~0.75 acres per home</strong><br />
-  ▢ Layout designed for assessor & planning review clarity
 </div>
 
 </body>
