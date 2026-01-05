@@ -1,278 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Home Interiors | ADK SunnyView LLC</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Model Home Interiors | ADK SunnyView LLC</title>
 
-  <style>
-    :root {
-      --sun-gold: #f4c430;
-      --deep-blue: #1c2b3a;
-      --soft-gray: #f5f7fa;
-      --warm-wood: #c7a26a;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: "Segoe UI", system-ui, sans-serif;
-    }
+<style>
+  body {
+    margin: 0;
+    font-family: Inter, system-ui, sans-serif;
+    background: #f3f4f6;
+    color: #111827;
+  }
 
-    body {
-      background: linear-gradient(to bottom, #ffffff, var(--soft-gray));
-      color: #1f2933;
-      line-height: 1.7;
-    }
+  header {
+    padding: 2rem;
+    text-align: center;
+  }
 
-    header {
-      background: linear-gradient(
-        rgba(28,43,58,0.85),
-        rgba(28,43,58,0.85)
-      ),
-      radial-gradient(circle at top, var(--sun-gold), transparent 60%);
-      color: white;
-      padding: 4rem 2rem;
-      text-align: center;
-    }
+  h1 {
+    font-size: 2.4rem;
+    margin-bottom: 0.5rem;
+  }
 
-    header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
-      letter-spacing: 1px;
-    }
+  p {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    color: #4b5563;
+  }
 
-    header p {
-      max-width: 800px;
-      margin: auto;
-      font-size: 1.15rem;
-      opacity: 0.95;
-    }
+  #walkthrough-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto 4rem;
+  }
 
-    section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 4rem 2rem;
-    }
+  #walkthrough {
+    height: 600px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+    cursor: pointer;
+  }
 
-    .section-title {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: var(--deep-blue);
-    }
+  #room-label {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.6rem 1.4rem;
+    background: rgba(0,0,0,0.55);
+    color: #fff;
+    font-size: 1.05rem;
+    border-radius: 999px;
+    opacity: 0;
+    transition: opacity 1s ease;
+    pointer-events: none;
+    z-index: 10;
+  }
 
-    .section-subtitle {
-      font-size: 1.05rem;
-      max-width: 900px;
-      margin-bottom: 2.5rem;
-      color: #4b5563;
-    }
+  #room-label.show {
+    opacity: 1;
+  }
 
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-
-    .card {
-      background: white;
-      border-radius: 14px;
-      padding: 2rem;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.08);
-      transition: transform 0.5s ease, box-shadow 0.5s ease;
-      animation: float 8s ease-in-out infinite;
-    }
-
-    .card:nth-child(2) {
-      animation-delay: 1.5s;
-    }
-
-    .card:nth-child(3) {
-      animation-delay: 3s;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
-
-    .card h3 {
-      margin-bottom: 1rem;
-      color: var(--deep-blue);
-    }
-
-    .card p {
-      font-size: 0.95rem;
-      color: #374151;
-    }
-
-    .visual {
-      height: 220px;
-      border-radius: 10px;
-      margin-bottom: 1.2rem;
-      background: linear-gradient(
-        135deg,
-        rgba(244,196,48,0.35),
-        rgba(199,162,106,0.35)
-      );
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 600;
-      color: #1c2b3a;
-      letter-spacing: 0.5px;
-    }
-
-    .divider {
-      height: 1px;
-      background: linear-gradient(to right, transparent, #d1d5db, transparent);
-      margin: 4rem 0;
-    }
-
-    footer {
-      background: var(--deep-blue);
-      color: white;
-      padding: 2.5rem 1.5rem;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-
-    footer span {
-      color: var(--sun-gold);
-      font-weight: 600;
-    }
-  </style>
+  footer {
+    text-align: center;
+    padding: 3rem;
+    font-size: 0.85rem;
+    color: #6b7280;
+  }
+</style>
 </head>
 
 <body>
 
 <header>
-  <h1>Interior Living at ADK SunnyView</h1>
+  <h1>Double-Wide Model Home Interior</h1>
   <p>
-    Thoughtfully maintained homes today — and beautifully designed manufactured
-    homes tomorrow — created with the same care we would give our own family.
+    Explore a representative manufactured home interior designed for comfort,
+    durability, and long-term value. Click inside the model to begin.
+    Use <strong>W A S D</strong> keys and your mouse to move.
   </p>
 </header>
 
-<section>
-  <h2 class="section-title">Option 1 — Existing Single-Wide Homes</h2>
-  <p class="section-subtitle">
-    The current homes at SunnyView represent stability, affordability, and pride
-    of ownership. Interiors are clean, functional, and dignified — serving long-term
-    residents who value consistency and community.
-  </p>
-
-  <div class="card-grid">
-    <div class="card">
-      <div class="visual">Living Area Visualization</div>
-      <h3>Comfort & Familiarity</h3>
-      <p>
-        Warm layouts, efficient kitchens, and comfortable living spaces that support
-        everyday life without excess — proven designs that residents trust.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="visual">Kitchen Visualization</div>
-      <h3>Practical Design</h3>
-      <p>
-        Straightforward interiors focused on function, cleanliness, and ease of
-        maintenance — ideal for long-term occupancy and predictable costs.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="visual">Bedroom Visualization</div>
-      <h3>Privacy & Rest</h3>
-      <p>
-        Quiet, well-defined personal spaces designed to feel secure and restful,
-        reinforcing a sense of home and permanence.
-      </p>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <h2 class="section-title">Option 2 — New Double-Wide Manufactured Homes</h2>
-  <p class="section-subtitle">
-    The future homes planned for the elevated rear of the property represent a
-    new standard: larger footprints, open interiors, modern finishes, and long-term
-    value for residents and the community.
-  </p>
-
-  <div class="card-grid">
-    <div class="card">
-      <div class="visual">Open-Concept Interior</div>
-      <h3>Spacious Living</h3>
-      <p>
-        Expansive open-concept layouts with natural light, higher ceilings, and
-        seamless flow between kitchen, dining, and living areas.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="visual">Modern Kitchen</div>
-      <h3>Modern Materials</h3>
-      <p>
-        Durable countertops, updated cabinetry, energy-efficient appliances,
-        and finishes selected for longevity and ease of care.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="visual">Primary Suite</div>
-      <h3>Comfort & Dignity</h3>
-      <p>
-        Private bedroom suites with generous storage and calm design — homes
-        people are proud to live in and stay in.
-      </p>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <h2 class="section-title">Option 3 — Interior Design as Community Investment</h2>
-  <p class="section-subtitle">
-    Interior quality is not cosmetic — it directly impacts resident retention,
-    property value, and long-term financial stability. These designs are intentional,
-    conservative, and future-proof.
-  </p>
-
-  <div class="card-grid">
-    <div class="card">
-      <div class="visual">Resident Stability</div>
-      <h3>Lower Turnover</h3>
-      <p>
-        Well-designed interiors encourage long-term residency, reducing vacancy,
-        turnover costs, and operational volatility.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="visual">Asset Longevity</div>
-      <h3>Durable Assets</h3>
-      <p>
-        Materials and layouts selected to age well, control maintenance costs,
-        and protect the value of the park for decades.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="visual">Community Pride</div>
-      <h3>Pride of Place</h3>
-      <p>
-        Interiors that feel respectful and intentional reinforce a positive
-        identity for residents and the surrounding community.
-      </p>
-    </div>
-  </div>
-</section>
+<div id="walkthrough-wrapper">
+  <div id="room-label">Living Room</div>
+  <div id="walkthrough"></div>
+</div>
 
 <footer>
-  © ADK SunnyView LLC — Built with care, foresight, and <span>long-term American values</span>.
+  © 2026 ADK SunnyView LLC — Interior concepts are illustrative
 </footer>
+
+<!-- THREE.JS -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.158.0/examples/js/controls/PointerLockControls.js"></script>
+
+<script>
+let scene, camera, renderer, controls;
+let moveForward = false, moveBackward = false, moveLeft = false, moveRight = false;
+const velocity = new THREE.Vector3();
+
+let tourActive = true;
+let tourStep = 0;
+let tourProgress = 0;
+
+const tourPoints = [
+  { x: -8, y: 1.6, z: -8 },
+  { x: 6,  y: 1.6, z: -6 },
+  { x: 6,  y: 1.6, z: 6 },
+  { x: -6, y: 1.6, z: 8 }
+];
+
+const roomNames = [
+  "Living Room",
+  "Dining Area",
+  "Kitchen",
+  "Primary Bedroom"
+];
+
+const roomLabel = document.getElementById("room-label");
+
+init();
+animate();
+
+function init() {
+  scene = new THREE.Scene();
+  scene.background = new THREE.Color(0xf8fafc);
+
+  camera = new THREE.PerspectiveCamera(75, window.innerWidth / 600, 0.1, 1000);
+
+  renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(window.innerWidth, 600);
+  renderer.setPixelRatio(window.devicePixelRatio);
+  document.getElementById("walkthrough").appendChild(renderer.domElement);
+
+  controls = new THREE.PointerLockControls(camera, renderer.domElement);
+  document.getElementById("walkthrough").addEventListener("click", () => {
+    tourActive = false;
+    roomLabel.classList.remove("show");
+    controls.lock();
+  });
+  scene.add(controls.getObject());
+
+  /* LIGHTING */
+  scene.add(new THREE.AmbientLight(0xffffff, 0.7));
+
+  const sun = new THREE.DirectionalLight(0xfff3c4, 0.9);
+  sun.position.set(10, 15, 5);
+  scene.add(sun);
+
+  /* FLOOR — upgraded wood tone */
+  const floor = new THREE.Mesh(
+    new THREE.PlaneGeometry(40, 40),
+    new THREE.MeshStandardMaterial({
+      color: 0xb08968,
+      roughness: 0.55
+    })
+  );
+  floor.rotation.x = -Math.PI / 2;
+  scene.add(floor);
+
+  /* WALLS */
+  createWall(0, 2.5, -20, 40, 5);
+  createWall(0, 2.5, 20, 40, 5);
+  createWall(-20, 2.5, 0, 40, 5, true);
+  createWall(20, 2.5, 0, 40, 5, true);
+
+  /* WINDOWS */
+  addWindow(0, 2.2, -19.8);
+  addWindow(-15, 2.2, -19.8);
+  addWindow(15, 2.2, -19.8);
+
+  addFurniture();
+
+  camera.position.y = 1.6;
+
+  document.addEventListener("keydown", onKeyDown);
+  document.addEventListener("keyup", onKeyUp);
+  window.addEventListener("resize", onResize);
+}
+
+function createWall(x,y,z,w,h,rot=false) {
+  const wall = new THREE.Mesh(
+    new THREE.BoxGeometry(w,h,0.4),
+    new THREE.MeshStandardMaterial({ color: 0xffffff })
+  );
+  wall.position.set(x,y,z);
+  if(rot) wall.rotation.y = Math.PI/2;
+  scene.add(wall);
+}
+
+function addWindow(x,y,z) {
+  const windowMesh = new THREE.Mesh(
+    new THREE.PlaneGeometry(5,2),
+    new THREE.MeshStandardMaterial({
+      color: 0xe0f2fe,
+      emissive: 0xbde0fe,
+      transparent: true,
+      opacity: 0.85
+    })
+  );
+  windowMesh.position.set(x,y,z);
+  scene.add(windowMesh);
+}
+
+function addFurniture() {
+
+  const sofa = new THREE.Mesh(
+    new THREE.BoxGeometry(6,1.2,2.5),
+    new THREE.MeshStandardMaterial({ color: 0x9ca3af })
+  );
+  sofa.position.set(-8,0.6,-6);
+  scene.add(sofa);
+
+  const table = new THREE.Mesh(
+    new THREE.BoxGeometry(3.5,0.6,3.5),
+    new THREE.MeshStandardMaterial({ color: 0x7c6f64 })
+  );
+  table.position.set(6,0.4,-6);
+  scene.add(table);
+
+  const counter = new THREE.Mesh(
+    new THREE.BoxGeometry(7,1.8,2),
+    new THREE.MeshStandardMaterial({ color: 0xf3f4f6 })
+  );
+  counter.position.set(6,0.9,6);
+  scene.add(counter);
+
+  const bed = new THREE.Mesh(
+    new THREE.BoxGeometry(6,1.2,7),
+    new THREE.MeshStandardMaterial({ color: 0xd1d5db })
+  );
+  bed.position.set(-6,0.6,8);
+  scene.add(bed);
+}
+
+function onKeyDown(e){
+  if(e.code==="KeyW") moveForward=true;
+  if(e.code==="KeyS") moveBackward=true;
+  if(e.code==="KeyA") moveLeft=true;
+  if(e.code==="KeyD") moveRight=true;
+}
+
+function onKeyUp(e){
+  if(e.code==="KeyW") moveForward=false;
+  if(e.code==="KeyS") moveBackward=false;
+  if(e.code==="KeyA") moveLeft=false;
+  if(e.code==="KeyD") moveRight=false;
+}
+
+function runTour(){
+  if(!tourActive) return;
+
+  const a = tourPoints[tourStep];
+  const b = tourPoints[tourStep+1] || a;
+
+  tourProgress += 0.004;
+
+  camera.position.lerpVectors(
+    new THREE.Vector3(a.x,a.y,a.z),
+    new THREE.Vector3(b.x,b.y,b.z),
+    tourProgress
+  );
+
+  camera.lookAt(camera.position.x,1.6,camera.position.z-1);
+
+  roomLabel.textContent = roomNames[tourStep];
+  roomLabel.classList.add("show");
+
+  if(tourProgress >= 1){
+    tourProgress = 0;
+    tourStep++;
+    roomLabel.classList.remove("show");
+    if(tourStep >= tourPoints.length-1) tourActive=false;
+  }
+}
+
+function animate(){
+  requestAnimationFrame(animate);
+
+  velocity.set(0,0,0);
+  const speed = 0.08;
+  if(moveForward) velocity.z -= speed;
+  if(moveBackward) velocity.z += speed;
+  if(moveLeft) velocity.x -= speed;
+  if(moveRight) velocity.x += speed;
+
+  controls.moveRight(velocity.x);
+  controls.moveForward(velocity.z);
+
+  runTour();
+  renderer.render(scene,camera);
+}
+
+function onResize(){
+  camera.aspect = window.innerWidth/600;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth,600);
+}
+</script>
 
 </body>
 </html>
-
