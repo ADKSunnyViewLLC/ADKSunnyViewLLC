@@ -2,210 +2,233 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Home Interiors | ADK SunnyView LLC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Interiors | ADK SunnyView LLC</title>
+  <meta name="description" content="Interior concepts for ADK SunnyView manufactured homes — warm, family-focused living spaces designed for long-term comfort." />
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --sun-gold: #f5c542;
+      --ink-dark: #0b0f14;
+      --panel: rgba(255,255,255,0.08);
+      --text-light: #e5e7eb;
+      --text-muted: rgba(255,255,255,0.75);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(to bottom, #f7f8f6, #ffffff);
-      color: #2a2a2a;
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--text-light);
+      background:
+        radial-gradient(circle at top, rgba(245,197,66,0.18), transparent 45%),
+        linear-gradient(180deg, #0b0f14 0%, #0e1624 100%);
+      line-height: 1.65;
     }
 
     header {
-      padding: 80px 20px;
-      text-align: center;
-      background: linear-gradient(120deg, #fff6dc, #f2efe8);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(11,15,20,0.75);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      margin-bottom: 12px;
-    }
-
-    header p {
-      max-width: 720px;
-      margin: auto;
-      font-size: 1.15rem;
-      color: #555;
-    }
-
-    .section {
+    nav {
       max-width: 1200px;
-      margin: 80px auto;
-      padding: 0 20px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
       align-items: center;
     }
 
-    .interior-card {
-      background: white;
-      border-radius: 18px;
-      box-shadow: 0 20px 45px rgba(0,0,0,0.08);
-      overflow: hidden;
-      transform: translateY(20px);
-      opacity: 0;
-      animation: fadeUp 1s ease forwards;
+    .logo {
+      font-weight: 800;
     }
 
-    .interior-card:nth-child(2) {
-      animation-delay: 0.2s;
+    .logo span { color: var(--sun-gold); }
+
+    .nav-links a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.9rem;
     }
 
-    .interior-card:nth-child(3) {
-      animation-delay: 0.4s;
+    .nav-links a:hover { color: #fff; }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 2rem 6rem;
     }
 
-    .visual {
-      height: 240px;
-      background: linear-gradient(135deg, #e6e2d8, #f5f4f1);
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1.25rem;
+    }
+
+    h1 span { color: var(--sun-gold); }
+
+    h2 {
+      font-size: 2.1rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: var(--text-muted);
+      max-width: 900px;
+      margin-bottom: 1.25rem;
+    }
+
+    section {
+      margin-bottom: 5rem;
+    }
+
+    /* Animated Interior Panels */
+    .interior-panel {
+      background: var(--panel);
+      border-radius: 22px;
+      padding: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.08);
       position: relative;
+      overflow: hidden;
     }
 
-    /* Stylized animated interior look */
-    .visual::before {
-      content: "";
-      position: absolute;
-      inset: 20px;
-      border-radius: 12px;
+    .interior-visual {
+      width: 100%;
+      height: 360px;
+      border-radius: 18px;
       background:
-        linear-gradient(90deg, #ffffff 40%, #e9e7e0 60%),
-        linear-gradient(#ddd, #eee);
-      animation: lightMove 6s infinite alternate ease-in-out;
-    }
-
-    .card-content {
-      padding: 28px;
-    }
-
-    .card-content h3 {
-      font-family: 'Playfair Display', serif;
-      margin-bottom: 10px;
-    }
-
-    .card-content p {
-      color: #555;
-      line-height: 1.6;
-      font-size: 0.95rem;
-    }
-
-    .values {
-      margin-top: 90px;
+        linear-gradient(120deg,
+          rgba(245,197,66,0.25),
+          rgba(255,255,255,0.05),
+          rgba(245,197,66,0.15)
+        );
+      background-size: 300% 300%;
+      animation: warmFlow 12s ease infinite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-    }
-
-    .values h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-    }
-
-    .values p {
-      max-width: 820px;
-      margin: auto;
+      font-weight: 700;
+      letter-spacing: 1.2px;
       font-size: 1.05rem;
-      color: #444;
-      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    @keyframes warmFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .label {
+      color: var(--sun-gold);
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      font-size: 0.85rem;
     }
 
     footer {
-      margin-top: 120px;
-      padding: 30px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 3rem 2rem;
       text-align: center;
-      background: #f2efe8;
-      font-size: 0.9rem;
-      color: #666;
-    }
-
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes lightMove {
-      from {
-        background-position: 0% 50%;
-      }
-      to {
-        background-position: 100% 50%;
-      }
+      font-size: 0.85rem;
+      opacity: 0.6;
     }
   </style>
 </head>
-
 <body>
 
 <header>
-  <h1>Interiors That Feel Like Home</h1>
-  <p>
-    Designed with the care and intention of family ownership — these modern
-    manufactured homes offer warmth, dignity, and lasting comfort for every resident.
-  </p>
+  <nav>
+    <div class="logo">ADK <span>SunnyView</span> LLC</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="mission.html">Mission</a>
+      <a href="development.html">Current Development</a>
+      <a href="future-park.html">Future Expansion</a>
+      <a href="community-center.html">Community Center</a>
+      <a href="interiors.html">Interiors</a>
+    </div>
+  </nav>
 </header>
 
-<section class="section">
-  <div class="grid">
+<main>
 
-    <div class="interior-card">
-      <div class="visual"></div>
-      <div class="card-content">
-        <h3>Open Living & Dining Spaces</h3>
-        <p>
-          Wide-open layouts with natural light, durable finishes, and
-          thoughtfully designed kitchens that bring families together.
-        </p>
+  <h1>Home <span>Interiors</span></h1>
+  <p>
+    These interior concepts reflect how we would want our own parents to live —
+    warm kitchens, comfortable living rooms, and bedrooms designed for rest,
+    not trends. Quality that feels familiar, solid, and built to last.
+  </p>
+
+  <!-- KITCHEN & DINING -->
+  <section>
+    <div class="interior-panel">
+      <div class="label">Kitchen & Dining</div>
+      <div class="interior-visual">
+        OPEN KITCHEN · DINING · FAMILY GATHERING
       </div>
+      <p>
+        Open-concept kitchens anchor each double-wide home, creating a natural
+        gathering space for meals, conversation, and everyday life. Durable
+        surfaces, clean lines, and warm lighting keep the space practical and inviting.
+      </p>
     </div>
+  </section>
 
-    <div class="interior-card">
-      <div class="visual"></div>
-      <div class="card-content">
-        <h3>Comfortable Private Bedrooms</h3>
-        <p>
-          Peaceful, well-insulated bedrooms designed for rest, privacy,
-          and long-term everyday living — not temporary housing.
-        </p>
+  <!-- LIVING ROOM -->
+  <section>
+    <div class="interior-panel">
+      <div class="label">Living Room</div>
+      <div class="interior-visual">
+        COMFORTABLE · QUIET · NATURAL LIGHT
       </div>
+      <p>
+        Living rooms are designed for real use — watching a game, reading a book,
+        or hosting grandchildren. Wide layouts and thoughtful window placement
+        create a calm, grounded atmosphere.
+      </p>
     </div>
+  </section>
 
-    <div class="interior-card">
-      <div class="visual"></div>
-      <div class="card-content">
-        <h3>Quality Craftsmanship</h3>
-        <p>
-          Modern manufactured construction with quality materials,
-          efficient layouts, and pride of ownership built into every detail.
-        </p>
+  <!-- BEDROOM -->
+  <section>
+    <div class="interior-panel">
+      <div class="label">Bedroom</div>
+      <div class="interior-visual">
+        REST · PRIVACY · SIMPLICITY
       </div>
+      <p>
+        Bedrooms emphasize peace and privacy. Soft tones, functional storage,
+        and separation from living areas ensure quiet rest and long-term comfort.
+      </p>
     </div>
+  </section>
 
-  </div>
-
-  <div class="values">
-    <h2>Built Like Our Own Parents Would Live Here</h2>
+  <section>
+    <h2>Designed Like Family Lives Here</h2>
     <p>
-      ADK SunnyView LLC is guided by a simple belief: homes should be
-      safe, beautiful, and affordable without sacrificing pride.
-      These interiors reflect long-term stewardship — not short-term profit.
+      These homes are not built to flip — they are built to stay. Every interior
+      decision supports longevity, ease of maintenance, and a sense of dignity
+      for the people who live here.
     </p>
-  </div>
-</section>
+  </section>
+
+</main>
 
 <footer>
-  © ADK SunnyView LLC • Designed for Community, Stability & Growth
+  © 2026 ADK SunnyView LLC. All rights reserved.
 </footer>
 
 </body>
 </html>
+
