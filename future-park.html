@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Future Expansion | ADK SunnyView LLC</title>
-  <meta name="description" content="Planned future expansion of ADK SunnyView LLC: phased park growth, infrastructure scaling, and long-term land stewardship." />
+  <title>Future Manufactured Home Park | ADK SunnyView LLC</title>
+  <meta name="description" content="Vision for the future manufactured home park at ADK SunnyView LLC — elevated double-wide homes, community center, and long-term value creation." />
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,6 +15,7 @@
       --sun-soft: #ffe8a3;
       --ink-dark: #0b0f14;
       --panel: rgba(255,255,255,0.08);
+      --panel-strong: rgba(255,255,255,0.12);
       --text-light: #e5e7eb;
       --text-muted: rgba(255,255,255,0.75);
     }
@@ -25,9 +26,10 @@
       font-family: 'Inter', system-ui, sans-serif;
       color: var(--text-light);
       background:
-        radial-gradient(circle at top, rgba(245,197,66,0.25), transparent 45%),
-        linear-gradient(180deg, #0b0f14 0%, #0e1624 100%);
-      line-height: 1.6;
+        radial-gradient(circle at 20% 10%, rgba(245,197,66,0.25), transparent 45%),
+        radial-gradient(circle at 80% 0%, rgba(245,197,66,0.15), transparent 40%),
+        linear-gradient(180deg, #070a0f 0%, #0e1624 100%);
+      line-height: 1.65;
     }
 
     header {
@@ -67,78 +69,105 @@
     main {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 5rem 2rem 6rem;
+      padding: 6rem 2rem 7rem;
     }
 
     h1 {
-      font-size: 3rem;
-      line-height: 1.15;
+      font-size: 3.2rem;
+      line-height: 1.1;
       margin-bottom: 1.5rem;
     }
 
     h1 span { color: var(--sun-gold); }
-
-    .intro {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      max-width: 850px;
-      margin-bottom: 3.5rem;
-    }
-
-    section { margin-bottom: 4rem; }
 
     h2 {
       font-size: 2.2rem;
       margin-bottom: 1rem;
     }
 
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
     p {
       color: var(--text-muted);
-      max-width: 900px;
+      max-width: 920px;
       margin-bottom: 1.25rem;
+      font-size: 1.02rem;
+    }
+
+    section {
+      margin-bottom: 5rem;
+    }
+
+    /* Hero background art */
+    .hero {
+      position: relative;
+      border-radius: 26px;
+      padding: 4.5rem 3rem;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.85)),
+        radial-gradient(circle at 30% 0%, rgba(245,197,66,0.35), transparent 50%),
+        linear-gradient(135deg, #1b2a1e 0%, #0e1624 60%);
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 40px 120px rgba(0,0,0,0.6);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(
+          135deg,
+          rgba(245,197,66,0.08),
+          rgba(245,197,66,0.08) 1px,
+          transparent 1px,
+          transparent 10px
+        );
+      border-radius: 26px;
+      pointer-events: none;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+    }
+
+    .panel {
+      background: var(--panel);
+      border-radius: 22px;
+      padding: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .panel-strong {
+      background: var(--panel-strong);
+      border-radius: 22px;
+      padding: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.12);
     }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-bottom: 4rem;
+      gap: 2.5rem;
     }
 
-    .card {
-      background: var(--panel);
-      border-radius: 20px;
-      padding: 2rem;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .card h3 {
-      margin-bottom: 0.75rem;
-      font-size: 1.25rem;
-    }
-
-    .visual-panel {
-      background: var(--panel);
-      border-radius: 22px;
-      padding: 2rem;
-      border: 1px solid rgba(255,255,255,0.08);
-      margin-bottom: 4rem;
-    }
-
-    .visual {
+    .elevation-visual {
       width: 100%;
-      aspect-ratio: 16 / 9;
-      border-radius: 16px;
+      height: 420px;
+      border-radius: 20px;
       background:
-        linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.55)),
-        radial-gradient(circle at center, rgba(245,197,66,0.25), transparent 60%);
+        linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.7)),
+        linear-gradient(180deg, #3a5a40 0%, #2b3f2f 40%, #1a1f24 100%);
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       font-weight: 700;
-      letter-spacing: 1.5px;
-      opacity: 0.9;
+      letter-spacing: 1.6px;
+      color: #fff;
     }
 
     footer {
@@ -160,80 +189,94 @@
       <a href="mission.html">Mission</a>
       <a href="development.html">Current Development</a>
       <a href="future-park.html">Future Expansion</a>
-      <a href="community.html">Community Center</a>
+      <a href="community-center.html">Community Center</a>
     </div>
   </nav>
 </header>
 
 <main>
-  <h1>Future <span>Expansion</span></h1>
-  <p class="intro">
-    The future of SunnyView is intentionally phased. Expansion will proceed only
-    when infrastructure, demand, and regulatory alignment support stable growth.
-    Our approach protects existing residents while unlocking long-term value.
-  </p>
 
-  <section>
-    <h2>Phased Development Strategy</h2>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Future <span>Manufactured Home Park</span></h1>
     <p>
-      The rear two-thirds of the SunnyView property remains undeveloped forest.
-      This land is reserved for future residential placement, community amenities,
-      and infrastructure expansion in carefully sequenced phases.
+      The next phase of ADK SunnyView LLC is a thoughtfully designed manufactured
+      home community built on elevated ground at the rear of the property —
+      creating separation, resilience, and long-term value.
+    </p>
+    <p>
+      This development is intentionally positioned to more than double the
+      overall value of the land while strengthening the surrounding community
+      through stability, pride of ownership, and shared space.
     </p>
   </section>
 
-  <div class="grid">
-    <div class="card">
-      <h3>Phase One</h3>
-      <p>
-        Infrastructure assessment, zoning compliance review, and utility
-        capacity upgrades—without disturbing existing homes.
-      </p>
-    </div>
-    <div class="card">
-      <h3>Phase Two</h3>
-      <p>
-        Limited residential expansion with preserved buffers, internal road
-        extensions, and environmental safeguards.
-      </p>
-    </div>
-    <div class="card">
-      <h3>Phase Three</h3>
-      <p>
-        Community-focused amenities including shared green space and a
-        centralized community center hub.
-      </p>
-    </div>
-  </div>
-
-  <div class="visual-panel">
-    <div class="visual">
-      CONCEPTUAL FUTURE PARK LAYOUT<br />
-      FOREST PRESERVATION & PHASED GROWTH
-    </div>
-    <p style="margin-top:1.5rem;">
-      This conceptual visualization represents future expansion areas while
-      maintaining forest buffers, privacy, and orderly spacing.
-    </p>
-  </div>
-
+  <!-- ELEVATION STORY -->
   <section>
-    <h2>Environmental Stewardship</h2>
+    <h2>Elevated Design, Elevated Value</h2>
+    <div class="grid">
+      <div class="panel">
+        <p>
+          The existing single-wide homes remain along the main road at a lower
+          elevation, preserving access and continuity for long-term residents.
+        </p>
+        <p>
+          The new manufactured home park will rise approximately 20 feet higher
+          on the rear acreage, offering improved drainage, views, privacy, and
+          a distinct identity as a next-generation residential community.
+        </p>
+      </div>
+      <div class="panel-strong">
+        <p>
+          Elevation is not just physical — it represents an intentional step
+          forward in quality, planning, and asset performance. Double-wide homes
+          placed on higher ground reflect permanence, care, and future readiness.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISUAL PLACEHOLDER -->
+  <section>
+    <h2>Conceptual Rear Park Layout</h2>
     <p>
-      Expansion planning prioritizes forest preservation, stormwater management,
-      and long-term ecological balance. Growth will not come at the expense of
-      land integrity or resident quality of life.
+      The rear 10 acres will be organized into evenly spaced double-wide home
+      sites surrounded by preserved forest, internal roadways, and pedestrian
+      paths — all oriented toward a shared community center.
+    </p>
+
+    <div class="elevation-visual">
+      ELEVATED DOUBLE-WIDE PARK<br>
+      REAR OF PROPERTY — 20 FT ABOVE ROAD
+    </div>
+  </section>
+
+  <!-- COMMUNITY CENTER -->
+  <section>
+    <h2>Community-Centered Growth</h2>
+    <div class="panel">
+      <p>
+        At the heart of the future park is a modern community center designed to
+        serve residents of both the existing and new developments.
+      </p>
+      <p>
+        This shared space will host gatherings, services, meetings, and everyday
+        connection — reinforcing the idea that growth should benefit everyone,
+        not displace anyone.
+      </p>
+    </div>
+  </section>
+
+  <!-- LONG-TERM VISION -->
+  <section>
+    <h2>Built for Generations</h2>
+    <p>
+      ADK SunnyView LLC approaches development with a long horizon. This
+      manufactured home park is not a short-term build — it is a generational
+      asset designed to provide housing, dignity, and value for decades to come.
     </p>
   </section>
 
-  <section>
-    <h2>Built for the Long Term</h2>
-    <p>
-      SunnyView is not a short-term project. Every future phase is evaluated
-      through the lens of decades—not quarters—ensuring durability, compliance,
-      and generational value.
-    </p>
-  </section>
 </main>
 
 <footer>
@@ -242,4 +285,3 @@
 
 </body>
 </html>
-
