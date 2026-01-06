@@ -8,69 +8,142 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-  body {
-    margin: 0;
-    font-family: Inter, system-ui, sans-serif;
-    background: #f3f4f6;
-    color: #111827;
-  }
+/* ============================= */
+/* Global Variables */
+/* ============================= */
+:root {
+  --text-muted: #6b7280;
+  --panel-bg: rgba(255,255,255,0.85);
+}
 
-  header {
-    padding: 2rem;
-    text-align: center;
-  }
+/* ============================= */
+/* Base Layout */
+/* ============================= */
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(245,197,66,0.08), transparent 40%),
+    linear-gradient(180deg, #eef2f7 0%, #f9fafb 100%);
+  color: #111827;
+}
 
-  h1 {
-    font-size: 2.4rem;
-    margin-bottom: 0.5rem;
-  }
+header {
+  padding: 3rem 2rem 2rem;
+  text-align: center;
+}
 
-  p {
-    max-width: 800px;
-    margin: 0 auto 2rem;
-    color: #4b5563;
-  }
+h1 {
+  font-size: 2.6rem;
+  margin-bottom: 0.6rem;
+}
 
-  #walkthrough-wrapper {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto 4rem;
-  }
+p {
+  max-width: 820px;
+  margin: 0 auto 2.5rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
 
-  #walkthrough {
-    height: 600px;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.2);
-    cursor: pointer;
-  }
+/* ============================= */
+/* Walkthrough */
+/* ============================= */
+#walkthrough-wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto 5rem;
+}
 
-  #room-label {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 0.6rem 1.4rem;
-    background: rgba(0,0,0,0.55);
-    color: #fff;
-    font-size: 1.05rem;
-    border-radius: 999px;
-    opacity: 0;
-    transition: opacity 1s ease;
-    pointer-events: none;
-    z-index: 10;
-  }
+#walkthrough {
+  height: 600px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.25);
+  cursor: pointer;
+  background: #fff;
+}
 
-  #room-label.show {
-    opacity: 1;
-  }
+#room-label {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.6rem 1.4rem;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  font-size: 1.05rem;
+  border-radius: 999px;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+  z-index: 10;
+}
 
-  footer {
-    text-align: center;
-    padding: 3rem;
-    font-size: 0.85rem;
-    color: #6b7280;
-  }
+#room-label.show {
+  opacity: 1;
+}
+
+/* ============================= */
+/* Assessor Map Section */
+/* ============================= */
+.assessor-map-section {
+  margin: 6rem auto 6rem;
+  max-width: 1200px;
+  padding: 4rem 3rem;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.88)),
+    repeating-linear-gradient(
+      45deg,
+      rgba(0,0,0,0.015) 0px,
+      rgba(0,0,0,0.015) 2px,
+      transparent 2px,
+      transparent 6px
+    );
+  border-radius: 28px;
+  box-shadow:
+    0 40px 80px rgba(0,0,0,0.18),
+    inset 0 0 0 1px rgba(0,0,0,0.05);
+}
+
+.assessor-map-section h2 {
+  text-align: center;
+  font-size: 2.1rem;
+  margin-bottom: 2.5rem;
+}
+
+.map-wrapper {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 1.8rem;
+  box-shadow:
+    0 25px 55px rgba(0,0,0,0.22),
+    inset 0 0 0 1px rgba(0,0,0,0.04);
+}
+
+.map-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+}
+
+.map-caption {
+  margin-top: 1.4rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* ============================= */
+/* Footer */
+/* ============================= */
+footer {
+  text-align: center;
+  padding: 3.5rem 2rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
 </style>
 </head>
 
@@ -90,214 +163,199 @@
   <div id="walkthrough"></div>
 </div>
 
+<!-- ============================= -->
+<!-- Assessor Site Map -->
+<!-- ============================= -->
+<section class="assessor-map-section">
+  <h2>Conceptual Assessor Site Map</h2>
+
+  <div class="map-wrapper">
+    <img
+      src="images/map-of-park.png"
+      alt="Conceptual assessor site map showing internal road loop, park homes, pond, and community center"
+      loading="lazy"
+    >
+  </div>
+
+  <p class="map-caption">
+    Conceptual layout for planning and assessor review purposes only.  
+    Not a boundary survey.
+  </p>
+</section>
+
 <footer>
-  © 2026 ADK SunnyView LLC — Interior concepts are illustrative
+  © 2026 ADK SunnyView LLC — Interior & site concepts are illustrative
 </footer>
 
+<!-- ============================= -->
 <!-- THREE.JS -->
+<!-- ============================= -->
 <script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.158.0/examples/js/controls/PointerLockControls.js"></script>
 
 <script>
 let scene, camera, renderer, controls;
-let moveForward = false, moveBackward = false, moveLeft = false, moveRight = false;
+let moveForward=false, moveBackward=false, moveLeft=false, moveRight=false;
 const velocity = new THREE.Vector3();
 
-let tourActive = true;
-let tourStep = 0;
-let tourProgress = 0;
+let tourActive=true, tourStep=0, tourProgress=0;
 
 const tourPoints = [
-  { x: -8, y: 1.6, z: -8 },
-  { x: 6,  y: 1.6, z: -6 },
-  { x: 6,  y: 1.6, z: 6 },
-  { x: -6, y: 1.6, z: 8 }
+  {x:-8,y:1.6,z:-8},
+  {x:6,y:1.6,z:-6},
+  {x:6,y:1.6,z:6},
+  {x:-6,y:1.6,z:8}
 ];
 
-const roomNames = [
-  "Living Room",
-  "Dining Area",
-  "Kitchen",
-  "Primary Bedroom"
-];
-
-const roomLabel = document.getElementById("room-label");
+const roomNames = ["Living Room","Dining Area","Kitchen","Primary Bedroom"];
+const roomLabel=document.getElementById("room-label");
 
 init();
 animate();
 
-function init() {
-  scene = new THREE.Scene();
-  scene.background = new THREE.Color(0xf8fafc);
+function init(){
+  scene=new THREE.Scene();
+  scene.background=new THREE.Color(0xf8fafc);
 
-  camera = new THREE.PerspectiveCamera(75, window.innerWidth / 600, 0.1, 1000);
-
-  renderer = new THREE.WebGLRenderer({ antialias: true });
-  renderer.setSize(window.innerWidth, 600);
+  camera=new THREE.PerspectiveCamera(75,window.innerWidth/600,0.1,1000);
+  renderer=new THREE.WebGLRenderer({antialias:true});
+  renderer.setSize(window.innerWidth,600);
   renderer.setPixelRatio(window.devicePixelRatio);
   document.getElementById("walkthrough").appendChild(renderer.domElement);
 
-  controls = new THREE.PointerLockControls(camera, renderer.domElement);
-  document.getElementById("walkthrough").addEventListener("click", () => {
-    tourActive = false;
+  controls=new THREE.PointerLockControls(camera,renderer.domElement);
+  document.getElementById("walkthrough").addEventListener("click",()=>{
+    tourActive=false;
     roomLabel.classList.remove("show");
     controls.lock();
   });
   scene.add(controls.getObject());
 
-  /* LIGHTING */
-  scene.add(new THREE.AmbientLight(0xffffff, 0.7));
-
-  const sun = new THREE.DirectionalLight(0xfff3c4, 0.9);
-  sun.position.set(10, 15, 5);
+  scene.add(new THREE.AmbientLight(0xffffff,0.7));
+  const sun=new THREE.DirectionalLight(0xfff3c4,0.9);
+  sun.position.set(10,15,5);
   scene.add(sun);
 
-  /* FLOOR — upgraded wood tone */
-  const floor = new THREE.Mesh(
-    new THREE.PlaneGeometry(40, 40),
-    new THREE.MeshStandardMaterial({
-      color: 0xb08968,
-      roughness: 0.55
-    })
+  const floor=new THREE.Mesh(
+    new THREE.PlaneGeometry(40,40),
+    new THREE.MeshStandardMaterial({color:0xb08968,roughness:0.55})
   );
-  floor.rotation.x = -Math.PI / 2;
+  floor.rotation.x=-Math.PI/2;
   scene.add(floor);
 
-  /* WALLS */
-  createWall(0, 2.5, -20, 40, 5);
-  createWall(0, 2.5, 20, 40, 5);
-  createWall(-20, 2.5, 0, 40, 5, true);
-  createWall(20, 2.5, 0, 40, 5, true);
+  createWall(0,2.5,-20,40,5);
+  createWall(0,2.5,20,40,5);
+  createWall(-20,2.5,0,40,5,true);
+  createWall(20,2.5,0,40,5,true);
 
-  /* WINDOWS */
-  addWindow(0, 2.2, -19.8);
-  addWindow(-15, 2.2, -19.8);
-  addWindow(15, 2.2, -19.8);
+  addWindow(0,2.2,-19.8);
+  addWindow(-15,2.2,-19.8);
+  addWindow(15,2.2,-19.8);
 
   addFurniture();
+  camera.position.y=1.6;
 
-  camera.position.y = 1.6;
-
-  document.addEventListener("keydown", onKeyDown);
-  document.addEventListener("keyup", onKeyUp);
-  window.addEventListener("resize", onResize);
+  document.addEventListener("keydown",onKeyDown);
+  document.addEventListener("keyup",onKeyUp);
+  window.addEventListener("resize",onResize);
 }
 
-function createWall(x,y,z,w,h,rot=false) {
-  const wall = new THREE.Mesh(
+function createWall(x,y,z,w,h,r=false){
+  const wall=new THREE.Mesh(
     new THREE.BoxGeometry(w,h,0.4),
-    new THREE.MeshStandardMaterial({ color: 0xffffff })
+    new THREE.MeshStandardMaterial({color:0xffffff})
   );
   wall.position.set(x,y,z);
-  if(rot) wall.rotation.y = Math.PI/2;
+  if(r) wall.rotation.y=Math.PI/2;
   scene.add(wall);
 }
 
-function addWindow(x,y,z) {
-  const windowMesh = new THREE.Mesh(
+function addWindow(x,y,z){
+  const win=new THREE.Mesh(
     new THREE.PlaneGeometry(5,2),
     new THREE.MeshStandardMaterial({
-      color: 0xe0f2fe,
-      emissive: 0xbde0fe,
-      transparent: true,
-      opacity: 0.85
+      color:0xe0f2fe,
+      emissive:0xbde0fe,
+      transparent:true,
+      opacity:0.85
     })
   );
-  windowMesh.position.set(x,y,z);
-  scene.add(windowMesh);
+  win.position.set(x,y,z);
+  scene.add(win);
 }
 
-function addFurniture() {
-
-  const sofa = new THREE.Mesh(
+function addFurniture(){
+  scene.add(new THREE.Mesh(
     new THREE.BoxGeometry(6,1.2,2.5),
-    new THREE.MeshStandardMaterial({ color: 0x9ca3af })
-  );
-  sofa.position.set(-8,0.6,-6);
-  scene.add(sofa);
+    new THREE.MeshStandardMaterial({color:0x9ca3af})
+  )).position.set(-8,0.6,-6);
 
-  const table = new THREE.Mesh(
+  scene.add(new THREE.Mesh(
     new THREE.BoxGeometry(3.5,0.6,3.5),
-    new THREE.MeshStandardMaterial({ color: 0x7c6f64 })
-  );
-  table.position.set(6,0.4,-6);
-  scene.add(table);
+    new THREE.MeshStandardMaterial({color:0x7c6f64})
+  )).position.set(6,0.4,-6);
 
-  const counter = new THREE.Mesh(
+  scene.add(new THREE.Mesh(
     new THREE.BoxGeometry(7,1.8,2),
-    new THREE.MeshStandardMaterial({ color: 0xf3f4f6 })
-  );
-  counter.position.set(6,0.9,6);
-  scene.add(counter);
+    new THREE.MeshStandardMaterial({color:0xf3f4f6})
+  )).position.set(6,0.9,6);
 
-  const bed = new THREE.Mesh(
+  scene.add(new THREE.Mesh(
     new THREE.BoxGeometry(6,1.2,7),
-    new THREE.MeshStandardMaterial({ color: 0xd1d5db })
-  );
-  bed.position.set(-6,0.6,8);
-  scene.add(bed);
+    new THREE.MeshStandardMaterial({color:0xd1d5db})
+  )).position.set(-6,0.6,8);
 }
 
 function onKeyDown(e){
-  if(e.code==="KeyW") moveForward=true;
-  if(e.code==="KeyS") moveBackward=true;
-  if(e.code==="KeyA") moveLeft=true;
-  if(e.code==="KeyD") moveRight=true;
+  if(e.code==="KeyW")moveForward=true;
+  if(e.code==="KeyS")moveBackward=true;
+  if(e.code==="KeyA")moveLeft=true;
+  if(e.code==="KeyD")moveRight=true;
 }
-
 function onKeyUp(e){
-  if(e.code==="KeyW") moveForward=false;
-  if(e.code==="KeyS") moveBackward=false;
-  if(e.code==="KeyA") moveLeft=false;
-  if(e.code==="KeyD") moveRight=false;
+  if(e.code==="KeyW")moveForward=false;
+  if(e.code==="KeyS")moveBackward=false;
+  if(e.code==="KeyA")moveLeft=false;
+  if(e.code==="KeyD")moveRight=false;
 }
 
 function runTour(){
   if(!tourActive) return;
-
-  const a = tourPoints[tourStep];
-  const b = tourPoints[tourStep+1] || a;
-
-  tourProgress += 0.004;
-
+  const a=tourPoints[tourStep];
+  const b=tourPoints[tourStep+1]||a;
+  tourProgress+=0.004;
   camera.position.lerpVectors(
     new THREE.Vector3(a.x,a.y,a.z),
     new THREE.Vector3(b.x,b.y,b.z),
     tourProgress
   );
-
   camera.lookAt(camera.position.x,1.6,camera.position.z-1);
-
-  roomLabel.textContent = roomNames[tourStep];
+  roomLabel.textContent=roomNames[tourStep];
   roomLabel.classList.add("show");
-
-  if(tourProgress >= 1){
-    tourProgress = 0;
+  if(tourProgress>=1){
+    tourProgress=0;
     tourStep++;
     roomLabel.classList.remove("show");
-    if(tourStep >= tourPoints.length-1) tourActive=false;
+    if(tourStep>=tourPoints.length-1) tourActive=false;
   }
 }
 
 function animate(){
   requestAnimationFrame(animate);
-
   velocity.set(0,0,0);
-  const speed = 0.08;
-  if(moveForward) velocity.z -= speed;
-  if(moveBackward) velocity.z += speed;
-  if(moveLeft) velocity.x -= speed;
-  if(moveRight) velocity.x += speed;
-
+  const s=0.08;
+  if(moveForward)velocity.z-=s;
+  if(moveBackward)velocity.z+=s;
+  if(moveLeft)velocity.x-=s;
+  if(moveRight)velocity.x+=s;
   controls.moveRight(velocity.x);
   controls.moveForward(velocity.z);
-
   runTour();
   renderer.render(scene,camera);
 }
 
 function onResize(){
-  camera.aspect = window.innerWidth/600;
+  camera.aspect=window.innerWidth/600;
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth,600);
 }
