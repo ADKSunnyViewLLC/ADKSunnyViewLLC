@@ -59,17 +59,38 @@
 
     p { font-size: 1.05rem; color: #d1d5db; margin-bottom: 1rem; }
 
+    /* Hero section */
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: radial-gradient(circle at top, rgba(245,197,66,0.15), transparent 60%);
+      border-radius: 20px;
+      margin-bottom: 3rem;
+    }
+
+    .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.1rem; color: #d1d5db; }
+
+    /* Gallery */
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
       margin-top: 2rem;
     }
 
     .gallery img {
       width: 100%;
+      height: auto;
       border-radius: 15px;
       border: 1px solid rgba(255,255,255,0.08);
+      object-fit: cover;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
 
     footer {
@@ -102,12 +123,12 @@
 
 <main>
 
-  <section>
+  <section class="hero">
     <h1>Interiors Gallery</h1>
-    <p>
-      Explore the conceptual interiors of Sunny View Park homes. Each space is designed for comfort, efficiency, and long-term durability in four-season climates.
-    </p>
+    <p>Explore thoughtfully designed interiors for Sunny View Park homes, blending comfort, efficiency, and style for all seasons.</p>
+  </section>
 
+  <section>
     <div class="gallery">
       <img src="images/interiors-pic.jpg" alt="Interior Concept 1">
       <img src="images/interiors-pic2.jpg" alt="Interior Concept 2">
@@ -122,5 +143,4 @@
 
 </body>
 </html>
-
 
