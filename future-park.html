@@ -1,53 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Future Manufactured Home Park | ADK SunnyView LLC</title>
-  <meta name="description" content="Vision for the future manufactured home park at ADK SunnyView LLC — elevated double-wide homes, community center, and long-term value creation." />
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADK Sunny View LLC | Future Park</title>
 
   <style>
     :root {
       --sun-gold: #f5c542;
-      --sun-soft: #ffe8a3;
       --ink-dark: #0b0f14;
       --panel: rgba(255,255,255,0.08);
-      --panel-strong: rgba(255,255,255,0.12);
-      --text-light: #e5e7eb;
-      --text-muted: rgba(255,255,255,0.75);
+      --text-muted: #9ca3af;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { box-sizing: border-box; margin:0; padding:0; }
 
     body {
-      font-family: 'Inter', system-ui, sans-serif;
-      color: var(--text-light);
-      background:
-        radial-gradient(circle at 20% 10%, rgba(245,197,66,0.25), transparent 45%),
-        radial-gradient(circle at 80% 0%, rgba(245,197,66,0.15), transparent 40%),
-        linear-gradient(180deg, #070a0f 0%, #0e1624 100%);
-      line-height: 1.65;
+      font-family: Inter, system-ui, sans-serif;
+      background: linear-gradient(180deg, #0b0f14 0%, #0e1624 100%);
+      color: #e5e7eb;
+      line-height: 1.6;
     }
 
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(11,15,20,0.75);
+      background: rgba(11,15,20,0.85);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     nav {
       max-width: 1200px;
-      margin: 0 auto;
+      margin: auto;
       padding: 1rem 2rem;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
     }
 
     .logo {
@@ -59,115 +49,73 @@
 
     .nav-links a {
       margin-left: 1.5rem;
+      color: #d1d5db;
       text-decoration: none;
-      color: var(--text-muted);
       font-size: 0.9rem;
     }
 
     .nav-links a:hover { color: #fff; }
 
     main {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 6rem 2rem 7rem;
+      max-width: 1000px;
+      margin: auto;
+      padding: 4rem 2rem 6rem;
     }
 
-    h1 {
-      font-size: 3.2rem;
-      line-height: 1.1;
+    h1, h2 {
       margin-bottom: 1.5rem;
     }
 
-    h1 span { color: var(--sun-gold); }
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 2.3rem; }
 
-    h2 {
-      font-size: 2.2rem;
+    p {
+      font-size: 1.05rem;
+      color: #d1d5db;
       margin-bottom: 1rem;
     }
 
-    h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
-    }
-
-    p {
-      color: var(--text-muted);
-      max-width: 920px;
-      margin-bottom: 1.25rem;
-      font-size: 1.02rem;
-    }
-
-    section {
-      margin-bottom: 5rem;
-    }
-
-    /* Hero background art */
     .hero {
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 3rem;
       position: relative;
-      border-radius: 26px;
-      padding: 4.5rem 3rem;
       background:
-        linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.85)),
-        radial-gradient(circle at 30% 0%, rgba(245,197,66,0.35), transparent 50%),
-        linear-gradient(135deg, #1b2a1e 0%, #0e1624 60%);
-      border: 1px solid rgba(255,255,255,0.1);
-      box-shadow: 0 40px 120px rgba(0,0,0,0.6);
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        repeating-linear-gradient(
-          135deg,
-          rgba(245,197,66,0.08),
-          rgba(245,197,66,0.08) 1px,
-          transparent 1px,
-          transparent 10px
-        );
-      border-radius: 26px;
-      pointer-events: none;
-    }
-
-    .hero p {
-      font-size: 1.15rem;
-    }
-
-    .panel {
-      background: var(--panel);
-      border-radius: 22px;
-      padding: 2.5rem;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .panel-strong {
-      background: var(--panel-strong);
-      border-radius: 22px;
-      padding: 2.5rem;
-      border: 1px solid rgba(255,255,255,0.12);
+        url("images/map-of-park.jpg") no-repeat center/cover,
+        linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.6));
+      padding: 5rem 2rem;
+      color: #fff;
+      text-align: center;
     }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2.5rem;
+      gap: 2rem;
+      margin-top: 2rem;
     }
 
-    .elevation-visual {
-      width: 100%;
-      height: 420px;
+    .card {
+      background: var(--panel);
       border-radius: 20px;
-      background:
-        linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.7)),
-        linear-gradient(180deg, #3a5a40 0%, #2b3f2f 40%, #1a1f24 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-weight: 700;
-      letter-spacing: 1.6px;
-      color: #fff;
+      padding: 2rem;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .card h3 {
+      margin-bottom: 0.75rem;
+      font-size: 1.25rem;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .image {
+      max-width: 100%;
+      border-radius: 15px;
+      margin-bottom: 1rem;
     }
 
     footer {
@@ -175,113 +123,74 @@
       padding: 3rem 2rem;
       text-align: center;
       font-size: 0.85rem;
-      opacity: 0.6;
+      color: #9ca3af;
     }
   </style>
 </head>
+
 <body>
 
 <header>
   <nav>
-    <div class="logo">ADK <span>SunnyView</span> LLC</div>
+    <div class="logo">ADK <span>Sunny View</span></div>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="mission.html">Mission</a>
-      <a href="development.html">Current Development</a>
-      <a href="future-park.html">Future Expansion</a>
+      <a href="interiors.html">Interiors</a>
+      <a href="future-park.html">Future Park</a>
+      <a href="development.html">Development</a>
+      <a href="community.html">Community</a>
       <a href="community-center.html">Community Center</a>
+      <a href="assessor-site-map.html">Site Map</a>
     </div>
   </nav>
 </header>
 
 <main>
 
-  <!-- HERO -->
   <section class="hero">
-    <h1>Future <span>Manufactured Home Park</span></h1>
+    <h1>The future development of Sunny View Park will bring housing and community to the north country with places real people can afford.</h1>
+  </section>
+
+  <section>
+    <h2>Vision Overview</h2>
     <p>
-      The next phase of ADK SunnyView LLC is a thoughtfully designed manufactured
-      home community built on elevated ground at the rear of the property —
-      creating separation, resilience, and long-term value.
-    </p>
-    <p>
-      This development is intentionally positioned to more than double the
-      overall value of the land while strengthening the surrounding community
-      through stability, pride of ownership, and shared space.
+      Sunny View Park is planned to include 16 manufactured home sites and a central community area, combining affordability, comfort, and a sense of neighborhood.
     </p>
   </section>
 
-  <!-- ELEVATION STORY -->
   <section>
-    <h2>Elevated Design, Elevated Value</h2>
+    <h2>Planned Features</h2>
     <div class="grid">
-      <div class="panel">
-        <p>
-          The existing single-wide homes remain along the main road at a lower
-          elevation, preserving access and continuity for long-term residents.
-        </p>
-        <p>
-          The new manufactured home park will rise approximately 20 feet higher
-          on the rear acreage, offering improved drainage, views, privacy, and
-          a distinct identity as a next-generation residential community.
-        </p>
+      <div class="card">
+        <h3>Affordable Housing</h3>
+        <p>Modern double-wide homes designed for efficiency and durability.</p>
       </div>
-      <div class="panel-strong">
-        <p>
-          Elevation is not just physical — it represents an intentional step
-          forward in quality, planning, and asset performance. Double-wide homes
-          placed on higher ground reflect permanence, care, and future readiness.
-        </p>
+      <div class="card">
+        <h3>Community Center</h3>
+        <p>A shared space for gatherings, recreation, and neighborhood events.</p>
+      </div>
+      <div class="card">
+        <h3>Green Spaces</h3>
+        <p>Open areas, walking paths, and tree preservation for a natural feel.</p>
       </div>
     </div>
   </section>
 
-  <!-- VISUAL PLACEHOLDER -->
   <section>
-    <h2>Conceptual Rear Park Layout</h2>
-    <p>
-      The rear 10 acres will be organized into evenly spaced double-wide home
-      sites surrounded by preserved forest, internal roadways, and pedestrian
-      paths — all oriented toward a shared community center.
-    </p>
-
-    <div class="elevation-visual">
-      ELEVATED DOUBLE-WIDE PARK<br>
-      REAR OF PROPERTY — 20 FT ABOVE ROAD
-    </div>
-  </section>
-
-  <!-- COMMUNITY CENTER -->
-  <section>
-    <h2>Community-Centered Growth</h2>
-    <div class="panel">
-      <p>
-        At the heart of the future park is a modern community center designed to
-        serve residents of both the existing and new developments.
-      </p>
-      <p>
-        This shared space will host gatherings, services, meetings, and everyday
-        connection — reinforcing the idea that growth should benefit everyone,
-        not displace anyone.
-      </p>
-    </div>
-  </section>
-
-  <!-- LONG-TERM VISION -->
-  <section>
-    <h2>Built for Generations</h2>
-    <p>
-      ADK SunnyView LLC approaches development with a long horizon. This
-      manufactured home park is not a short-term build — it is a generational
-      asset designed to provide housing, dignity, and value for decades to come.
+    <h2>Conceptual Layout</h2>
+    <img src="images/map-of-park.jpg" alt="Conceptual Site Map" class="image">
+    <p style="text-align:center; font-size:0.9rem; color:#d1d5db;">
+      Conceptual layout showing 16 home sites and the community center at Sunny View Park.
     </p>
   </section>
 
 </main>
 
 <footer>
-  © 2026 ADK SunnyView LLC. All rights reserved.
+  © 2026 ADK Sunny View LLC · Manufactured Home Community · Peru, NY
 </footer>
 
 </body>
 </html>
+
