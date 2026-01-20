@@ -74,3 +74,20 @@ The website is designed to:
 This project is hosted using **GitHub Pages**:
 
 
+---
+
+## License
+
+All content, images, and design are the property of **ADK Sunny View LLC**. Unauthorized use is prohibited.
+
+---
+
+## Contact
+
+For more information about the project:
+
+**ADK Sunny View LLC**  
+Peru, New York  
+[Email or Contact Info]
+
+
