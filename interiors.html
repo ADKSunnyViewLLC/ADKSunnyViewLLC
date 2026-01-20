@@ -40,11 +40,7 @@
       align-items: center;
     }
 
-    .logo {
-      font-weight: 800;
-      letter-spacing: 0.6px;
-    }
-
+    .logo { font-weight: 800; letter-spacing: 0.6px; }
     .logo span { color: var(--sun-gold); }
 
     .nav-links a {
@@ -53,68 +49,27 @@
       text-decoration: none;
       font-size: 0.9rem;
     }
-
     .nav-links a:hover { color: #fff; }
 
-    main {
-      max-width: 1000px;
-      margin: auto;
-      padding: 4rem 2rem 6rem;
-    }
+    main { max-width: 1000px; margin: auto; padding: 4rem 2rem 6rem; }
 
-    h1, h2 {
-      margin-bottom: 1.5rem;
-    }
-
+    h1, h2 { margin-bottom: 1.5rem; }
     h1 { font-size: 2.8rem; }
     h2 { font-size: 2.3rem; }
 
-    p {
-      font-size: 1.05rem;
-      color: #d1d5db;
-      margin-bottom: 1rem;
-    }
+    p { font-size: 1.05rem; color: #d1d5db; margin-bottom: 1rem; }
 
-    .hero {
-      border-radius: 20px;
-      overflow: hidden;
-      margin-bottom: 3rem;
-      position: relative;
-      background:
-        url("images/cabin.jpg") no-repeat center/cover,
-        linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.6));
-      padding: 5rem 2rem;
-      color: #fff;
-    }
-
-    .grid {
+    .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
       margin-top: 2rem;
     }
 
-    .card {
-      background: var(--panel);
-      border-radius: 20px;
-      padding: 2rem;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .card h3 {
-      margin-bottom: 0.75rem;
-      font-size: 1.25rem;
-    }
-
-    .card p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-
-    .interior-image {
-      max-width: 100%;
+    .gallery img {
+      width: 100%;
       border-radius: 15px;
-      margin-bottom: 1rem;
+      border: 1px solid rgba(255,255,255,0.08);
     }
 
     footer {
@@ -147,41 +102,16 @@
 
 <main>
 
-  <section class="hero">
-    <h1>Interior Designs</h1>
-    <p>
-      Our interiors are designed for comfort, energy efficiency, and a modern Adirondack aesthetic.
-      Each home combines durability with thoughtful layout to ensure long-term satisfaction for residents.
-    </p>
-  </section>
-
   <section>
-    <h2>Interior Gallery</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="images/cabin.jpg" alt="Living Room Concept" class="interior-image">
-        <h3>Living Spaces</h3>
-        <p>
-          Open-concept layouts that maximize natural light, functionality, and comfort.
-        </p>
-      </div>
+    <h1>Interiors Gallery</h1>
+    <p>
+      Explore the conceptual interiors of Sunny View Park homes. Each space is designed for comfort, efficiency, and long-term durability in four-season climates.
+    </p>
 
-      <div class="card">
-        <img src="images/cabin2.jpg" alt="Kitchen and Dining" class="interior-image">
-        <h3>Kitchen & Dining</h3>
-        <p>
-          Modern appliances and finishes integrated with spacious dining areas for family living.
-        </p>
-      </div>
+    <div class="gallery">
+      <img src="images/interiors-pic.jpg" alt="Interior Concept 1">
+      <img src="images/interiors-pic2.jpg" alt="Interior Concept 2">
     </div>
-  </section>
-
-  <section>
-    <h2>Virtual Tour (Placeholder)</h2>
-    <p>
-      A fully interactive virtual tour is in development. For now, enjoy the gallery above to explore the design concepts.
-    </p>
-    <img src="images/cabin.jpg" alt="Interior Concept Placeholder" class="interior-image">
   </section>
 
 </main>
@@ -192,4 +122,5 @@
 
 </body>
 </html>
+
 
